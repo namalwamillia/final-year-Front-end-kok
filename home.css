@@ -1,0 +1,605 @@
+/* General Reset */
+body, ul, li, a {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Make sure body takes the full height of the viewport */
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styling (Stays Fixed at the Top) */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1AA79C; /* Dark green */
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures it stays above other elements */
+  height: 60px; /* Adjust header height */
+}
+
+/* Ensure the main content takes available space */
+.main-content {
+  flex: 1; /* Pushes footer to the bottom */
+  margin-top: 80px; /* Ensures content is below the fixed header */
+  padding: 20px;
+  min-height: calc(100vh - 140px); /* Adjust based on header & footer height */
+}
+
+
+/* Logo Styling */
+.logo {
+  background-color: white; /* White circular background */
+  border-radius: 50%; /* Makes it circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px; /* Adjust to fit your design */
+  width: 80px; /* Make it a perfect circle */
+  overflow: hidden; /* Ensures the image doesn't overflow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+.logo img {
+  height: 60%; /* Adjust size of the logo inside the circle */
+  width: auto; /* Maintain aspect ratio */
+}
+
+/* Navigation Bar Styling */
+.main-navbar ul {
+  display: flex;
+  gap: 20px;
+}
+
+.main-navbar li {
+  position: relative;
+}
+
+.main-navbar a {
+  color: white;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-navbar a:hover, .main-navbar a.active {
+  background-color: #063f39; /* Dark green */
+  color: #ffffff;
+}
+
+/* Dropdown Example (Optional for Nested Menus) */
+.main-navbar li:hover > ul {
+  display: block;
+}
+
+.main-navbar ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #004d40;
+  padding: 30px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.main-navbar ul ul li {
+  width: 150px;
+}
+
+.main-navbar ul ul a {
+  padding: 8px 12px;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Image for hands icon */
+#hands-icon {
+  width: 100px; /* Adjust size */
+  height: 100px; /* Adjust size */
+  opacity: 0; /* Initially hide the icon */
+  animation: hands-icon-animation 4s infinite; /* Animation for hands icon */
+  position: absolute; /* Absolute positioning to control its position */
+  top: 130px; /* Adjust this value to move it closer to the welcome message */
+  left: 50%; /* Center the hand icon horizontally */
+  transform: translateX(-50%); /* Ensure horizontal centering */
+}
+
+
+  /* Content Section */
+.content-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  max-width: 1200px;
+  gap: 2rem; /* Add space between the image and content */
+}
+
+/* Image on the left (cabbage image) */
+.left-image {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Center the cabbage image horizontally */
+  align-items: center;
+  margin-top: 50px; /* Move image closer to navbar */
+}
+
+.left-image img {
+  width: 600px;
+  height: 500px;
+  border-radius: 30px;
+}
+ 
+/* Right content */
+.right-content {
+  flex: 1;
+  max-width: 50%; /* Text content takes up to 50% of the section */
+  color: #333;
+  font-family: Arial, sans-serif;
+  opacity: 0; /* Initially hide the text */
+  animation: welcome-text-animation 4s infinite; /* Animation for welcome text */
+  text-align: center; /* Center the text */
+  margin-top: 150px; /* Increase margin to push the text further down */
+}
+
+.right-content h2 {
+  font-size: 3rem; /* Reduced size of welcome message */
+  margin-bottom: 2rem;
+  margin-left: 15vh;
+  color: #1AA79C; /* Orange color */
+}
+.right-content p {
+  font-size: 1.2rem; /* Reduced size of welcome message */
+  line-height: 1.2;
+  color: #4CAF50; 
+  margin-left: 15vh;
+  padding: 10px;
+  margin-top: 20px; /* Move the message further down */
+}
+
+/* Keyframes for welcome message animation */
+@keyframes welcome-text-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframes for hands icon animation */
+@keyframes hands-icon-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+  
+  
+  .view-product-box{
+    border: 1px solid #1AA79C; 
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: white;
+    width: 200px;
+    text-align: center;
+    margin-left: 90vh;
+    margin-top: 1px;
+    margin-bottom: 10vh;
+    
+  }
+  
+  /* Full-width section */
+.full-width-section {
+    width: 100%; /* Full width */
+    padding: 3rem 0; /* Padding for top and bottom */
+    background-color:  #f8f8f8; /* Light background color */
+    text-align: center; /* Center text inside */
+  }
+  
+  /* Inner wrapped box */
+  .inner-wrapped-box {
+    width: 80%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the box */
+    padding: 2rem;
+    background-color:  #6B9862; /* Light background for the inner box */
+    border: 1px solid #ccc; /* Border around the box */
+    border-radius: 1px; /* Rounded corners for the box */
+    color: white; 
+  }
+  
+  .inner-wrapped-box p {
+    font-size: 1.2rem;
+    color: white; /* Text color */
+  }
+
+  
+  .impact-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f8f8f8;
+}
+
+.impact-description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.square-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.square {
+    width: 220px;
+    height: 220px;
+    color: white;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Different colors for each box */
+.box1 { background-color: #1AA79C; } /* Teal */
+.box2 { background-color: #6B9862; } /* Orange */
+.box3 { background-color: #1AA79C; } /* Blue */
+.box4 { background-color:#6B9862; } /* Red */
+
+
+.square:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+  
+/* Footer Styling */
+.footer {
+  background-color: black;
+  color: white;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw; /* Ensures the footer spans the full width */
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-left, .footer-center, .footer-right {
+  flex: 1;
+}
+
+.footer-right .social-icons a {
+  margin-right: 10px;
+}
+
+.footer-right .social-icons img {
+  width: 25px;
+  height: 25px;
+}
+
+.footer h3 {
+  margin-bottom: 10px;
+}
+
+.footer p, .footer a {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.footer a:hover {
+  color: #ffdd57;
+}
+ 
+/* Offers Section */
+.offers-section {
+  padding: 40px;
+  text-align: center;
+  margin-top: 40vh; 
+  margin-bottom: 80px;
+  border:1px solid white;
+  background-color: white;
+}
+
+.offers-section h2 {
+  font-size: 36px;
+  color: #1AA79C;
+  margin-top: 0px;
+  margin-bottom: 50px;
+}
+
+.offers-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.offer-card {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 25%;
+  
+}
+
+.offer-card h3 {
+  color:black;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.offer-card p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.offer-card button {
+  background-color: #1AA79C;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.offer-card button:hover {
+  background-color: #ffdd57;
+}
+
+.offer-card img {
+  width: 100%; 
+  height: 200px; 
+  border-radius: 5px;
+  margin-bottom: 15px; 
+  object-fit: cover; 
+
+}
+
+.offers-section {
+  margin-top: -50px; /* Moves the section up */
+  padding-top: 0; /* Adjusts spacing */
+}
+
+.flash-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.flash-card {
+  background-color:  white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  flex: 1;
+  min-width: 220px;
+  max-width: 250px;
+  height: 200px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.flash-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.flash-card i {
+  font-size: 80px;
+  color:  #6B9862;
+  margin-bottom: 10px;
+}
+
+/* @keyframes moveText {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+} */
+
+.moving-text {
+  white-space: nowrap; /* Prevents text from breaking into multiple lines */
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white; /* Adjust color as needed */
+  animation: moveText 10s linear infinite; /* Adjust speed if needed */
+  position: relative;
+}
+
+/* Ensure the section takes full width */
+.full-width-section {
+  width: 100%;
+  background-color: #f8f9fa; /* Light background for visibility */
+  padding: 70px 0; /* Add spacing */
+  text-align: center; /* Center text */
+}
+
+/* Ensure inner box is properly positioned */
+.inner-wrapped-box {
+  max-width: 80%;
+  margin: 0 auto; /* Centering */
+  padding: 20px;
+  background: #6B9862;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a slight shadow */
+}
+
+/* Moving text animation */
+.moving-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white; /* Adjust color */
+  animation: fadeIn 3s ease-in-out infinite alternate; /* Smooth appearance */
+}
+
+
+
+
+
+ /* Reset */
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1AA79C;
+  padding: 15px 50px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.navbar .logo img {
+  height: 50px;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 18px;
+}
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+
+/* Section containing the flash cards */
+.content-section-two {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Spread out the flash cards */
+  align-items: center; /* Align items vertically in the center */
+  padding: 2rem;
+  margin-bottom: 3rem; /* Added margin at the bottom */
+}
+
+/* Flash cards */
+.flash-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly; /* Space out the cards evenly */
+  gap: 2rem; /* Space between cards */
+  width: 100%; /* Make sure the cards take the full width */
+}
+
+.flash-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9; /* Light background for the card */
+  padding: 10px;
+  width: 200px; /* Set width for each flash card */
+  height: 250px; /* Set height for each flash card */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  text-align: center;
+  transition: transform 0.3s ease-in-out; /* Smooth transform on hover */
+}
+
+.flash-card:hover {
+  transform: translateY(-5px); /* Hover effect */
+}
+
+/* Flash card icons */
+.flash-card i {
+  font-size: 3rem;
+  color: #4CAF50; /* Set color for icons */
+  margin-bottom: 10px; /* Space between icon and text */
+}
+
+/* Flash card text */
+.flash-card p {
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+  padding: 5px; /* Space around the text */
+}
+.btn-learn-more{
+  color: #ffdd57;
+  padding: 10px;
+}
+.section-heading{
+  padding: 5px;
+  margin-bottom: 50px;
+  font-size: 25px;
+}

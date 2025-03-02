@@ -1,0 +1,473 @@
+/* General Reset */
+body, ul, li, a {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+}
+
+/* Header Styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1AA79C; /* Dark green */
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo Styling */
+.logo {
+  background-color: white;
+  border-radius: 50%; /* Makes it circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px; /* Adjust to fit your design */
+  width: 80px; /* Make it a perfect circle */
+  overflow: hidden; /* Ensures the image doesn't overflow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+.logo img {
+  height: 60%; /* Adjust size of the logo inside the circle */
+  width: auto; /* Maintain aspect ratio */
+}
+
+/* Navigation Bar Styling */
+.main-navbar ul {
+  display: flex;
+  gap: 20px;
+}
+
+.main-navbar li {
+  position: relative;
+}
+
+.main-navbar a {
+  color: white;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-navbar a:hover, .main-navbar a.active {
+  background-color: #063f39; /* Dark green */
+  color: #ffffff;
+}
+
+/* Dropdown Example (Optional for Nested Menus) */
+.main-navbar li:hover > ul {
+  display: block;
+}
+
+.main-navbar ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #004d40;
+  padding: 30px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.main-navbar ul ul li {
+  width: 150px;
+}
+
+.main-navbar ul ul a {
+  padding: 8px 12px;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+  /* Center the About Us heading */
+/* About Us Heading */
+.about-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* About Us Section Styling */
+.about-image-section {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust the height of the section */
+  overflow: hidden;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.image-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.flashing-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: flash-animation 16s infinite; /* 16s for all 4 images, each showing for 4s */
+}
+
+.flashing-image:nth-child(1) {
+  animation-delay: 0s; /* First image shows immediately */
+}
+
+.flashing-image:nth-child(2) {
+  animation-delay: 4s; /* Second image shows after 4s */
+}
+
+.flashing-image:nth-child(3) {
+  animation-delay: 8s; /* Third image shows after 8s */
+}
+
+.flashing-image:nth-child(4) {
+  animation-delay: 12s; /* Fourth image shows after 12s */
+}
+
+/* Keyframes for flashing effect */
+@keyframes flash-animation {
+  0%, 100% {
+    opacity: 0; /* Hide the image */
+  }
+  25%, 75% {
+    opacity: 1; /* Show the image */
+  }
+  50% {
+    opacity: 0; /* Hide the image again */
+  }
+}
+
+/* Message container below images */
+.message-container {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.7); /* Light background to make the text stand out */
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+
+  /* Full-width Section */
+.mission-vision-section {
+    width: 100%;
+    background-color: white; 
+    padding: 2rem 0; /* Top and bottom padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Inner Wrapped Container */
+  .inner-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%; /* Adjust width as needed */
+    max-width: 1200px;
+    background-color: #f4f4f4; /* Light grey background */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Mission and Vision Boxes */
+
+  
+  .mission-box h2, .vision-box h2 {
+    margin-bottom: 1rem;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .mission-box p, .vision-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #004d40;
+  }
+  
+ /* Styling for the Awards Section */
+.awards-section {
+  padding: 2rem;
+  text-align: center;
+  overflow: hidden; /* Hide anything outside the container during the scroll */
+}
+
+.awards-section h2 {
+  color: black;
+  font-size: 2.5rem; /* Increase the font size of the title */
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+/* Styling for the awards container to enable scrolling */
+.awards-container {
+  display: flex;
+  justify-content: flex-start; /* Start the scrolling from the right */
+  gap: 30px; /* Increase space between the award boxes */
+  animation: scroll-left 15s linear infinite; /* Scrolling effect */
+}
+
+.award-box {
+  width: 300px; /* Increased width for larger award boxes */
+  padding: 0; /* Remove padding to make image cover the full box */
+  background-color: #f5f5f5; /* Add a background color to the box */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+  text-align: center;
+  overflow: hidden; /* Hide any image overflow */
+}
+
+.award-box img {
+  width: 100%; /* Make the image take up the entire width */
+  height: 250px; /* Adjust the height to ensure the image fits well */
+  object-fit: cover; /* Make sure the image covers the box without distortion */
+}
+
+.award-box p {
+  font-size: 1.rem; /* Increase font size for better readability */
+  color: #1AA79C;
+  line-height: 1.5;
+  padding: 10px; /* Add padding to the text for spacing */
+}
+
+/* Keyframes for the scrolling animation */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%); /* Start from the right */
+  }
+  100% {
+    transform: translateX(-100%); /* End at the left */
+  }
+}
+
+  .manager-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f8f9fa;
+}
+
+.manager-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.manager-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.manager-box {
+    width: 250px;
+    height: 320px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.manager-box:hover {
+    transform: scale(1.05);
+}
+
+.manager-box img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.manager-box h3 {
+    font-size: 1.3rem;
+    color: #1AA79C;
+    margin-bottom: 5px;
+}
+
+.manager-box p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    margin: 0 8px;
+    font-size: 1.3rem;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #1AA79C;
+}
+
+  
+
+  /* Footer */
+.footer {
+  background-color: black;
+  color: white;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-left, .footer-center, .footer-right {
+  flex: 1;
+}
+
+.footer-right .social-icons a {
+  margin-right: 10px;
+}
+
+.footer-right .social-icons img {
+  width: 25px;
+  height: 25px;
+}
+
+.footer h3 {
+  margin-bottom: 10px;
+}
+
+.footer p, .footer a {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.footer a:hover {
+  color: #ffdd57;
+}
+
+.mission-vision {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+   margin-bottom: 3rem;
+}
+
+.parent-container {
+  display: flex;
+  gap: 20px; /* Adds horizontal space between the cards */
+}
+
+.mission-card{
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  width: 48%; /* Takes up 48% width, leaving gap */
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  gap: 1px;
+  margin-bottom: 20px; /* Adds space below each card */
+}
+
+
+.vision-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  width: 48%; /* Takes up 48% width, leaving gap */
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  gap: 10px;
+  margin-bottom: 20px; /* Adds space below each card */
+}
+.mission-card h3,.vision-card h3{
+  margin-bottom: 1rem;
+}
+.mission-card{
+  background: #6B9862;
+}
+.vision-card{
+  background: #1AA79C;
+}
+.mission-vision-card-image {
+  position: relative;
+  overflow: hidden;
+  width: 120px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.mission-vision-card-image::before {
+  content: ''; /* Empty content to create the overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+ 
+  z-index: 1; /* Position the overlay on top of the image */
+}
+
+.mission-vision-card-image img {
+  width: 80%;
+  filter: brightness(0) invert(1); /* Makes the image fully white */
+}
+
+
+
+
+.mission-vision-card-image:hover img {
+transform: scale(1.1); /* Zoom in on hover */
+z-index: 1; /* Bring the image to the front */
+}.mission-vision,p{
+  color: white;
+}
+
+  
+  
+  

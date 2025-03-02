@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KOK Login Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #1AA79C;
+  }
+  
+  a:hover {
+    color: #14e241;
+  }
+  
+  h1 {
+    margin-bottom: 1.5rem;
+    color: #1AA79C;
+  }
+  
+  /* Login Container */
+  .login-container {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Logo Section */
+  .logo img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Form Section */
+  .login-form form {
+    margin-top: 1rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .login-btn {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #1AA79C;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .login-btn:hover {
+    background-color: #14e426;
+    color: #333;
+  }
+  
+  /* Register Link */
+  .register-link {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
+</style>
+<body>
+  <!-- Login Page -->
+  <div class="login-container">
+    <!-- Logo Section -->
+    <div class="logo">
+      <img src="logo.png" alt="Company Logo">
+    </div>
+
+    <!-- Login Form -->
+    <div class="login-form">
+      <h1>Login</h1>
+      <form action="process_login.php" method="POST">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <!-- <button type="submit" class="login-btn"><a href="../pages/order_form.html">login</a> -->
+          <button type="button" class="login-btn" onclick="window.location.href='../pages/order_form.html'">Login</button>
+
+      </form>
+
+      <!-- Register Link -->
+      <p class="register-link">
+        Do not have an account? <a href="register.html">Register</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
