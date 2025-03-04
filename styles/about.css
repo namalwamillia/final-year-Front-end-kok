@@ -1,25 +1,43 @@
 /* General Reset */
-body, ul, li, a {
+* {
   margin: 0;
   padding: 0;
-  list-style: none;
-  text-decoration: none;
-  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  transition: 0.2s ease-in-out;
 }
 
-/* Header Styling */
+ul, li, a {
+  list-style: none;
+  text-decoration: none;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1AA79C;
+  margin: 2rem auto;
+  text-align: center;
+}
+/* Header Styling (Stays Fixed at the Top) */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #1AA79C; /* Dark green */
-  padding: 10px 20px;
+  padding: 1rem 6rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
 }
 
 /* Logo Styling */
 .logo {
-  background-color: white;
+  background-color: white; /* White circular background */
   border-radius: 50%; /* Makes it circular */
   display: flex;
   justify-content: center;
@@ -51,47 +69,60 @@ body, ul, li, a {
   padding: 8px 12px;
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: bold;
 }
 
 .main-navbar a:hover, .main-navbar a.active {
   background-color: #063f39; /* Dark green */
   color: #ffffff;
+  
 }
-
-/* Dropdown Example (Optional for Nested Menus) */
-.main-navbar li:hover > ul {
-  display: block;
-}
-
-.main-navbar ul ul {
+.menu-icon {
   display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #004d40;
-  padding: 30px 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #fff;
 }
-
-.main-navbar ul ul li {
-  width: 150px;
-}
-
-.main-navbar ul ul a {
-  padding: 8px 12px;
-}
-
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
+  .menu-icon {
+    display: block; 
   }
-
+  .header {
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 2rem;
+  }
+  
+  .main-navbar {
+    display: none; /* Hide navbar initially */
+    position: absolute;
+    top: 80px;
+    left:0;
+    width: 100%;
+    text-align: center;
+    background-color: #1AA79C;
+  }
+  .header .main-navbar li{
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    border-bottom: 1px solid #fff;
+    text-align: center;
+  }
+  .header .main-navbar li a{
+    width: 100%;
+  }
+  .main-navbar {
+    margin-top: 1rem;
+  }
   .main-navbar ul {
     flex-direction: column;
     gap: 10px;
   }
+  .main-navbar.active {
+    display: block;
+  }
+
 }
 
   /* Center the About Us heading */
@@ -100,14 +131,15 @@ body, ul, li, a {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  color: #333;
+
 }
 
 /* About Us Section Styling */
 .about-image-section {
+  padding-top: 7rem;
   position: relative;
   width: 100%;
-  height: 400px; /* Adjust the height of the section */
+  height: 100vh; 
   overflow: hidden;
   text-align: center;
   background-color: #f1f1f1;
@@ -165,10 +197,11 @@ body, ul, li, a {
 .message-container {
   position: relative;
   z-index: 2;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.7); /* Light background to make the text stand out */
-  width: 60%;
+  padding: 3rem;
+  background-color: rgba(255, 255, 255, 0.8); /* Light background to make the text stand out */
+  width: 80%;
   margin: 0 auto;
+  margin-top: 10rem;
   border-radius: 10px;
 }
 
@@ -186,8 +219,10 @@ body, ul, li, a {
   /* Inner Wrapped Container */
   .inner-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 2rem;
     align-items: flex-start;
+    flex-wrap: wrap;
     width: 90%; /* Adjust width as needed */
     max-width: 1200px;
     background-color: #f4f4f4; /* Light grey background */
@@ -196,22 +231,9 @@ body, ul, li, a {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  /* Mission and Vision Boxes */
 
   
-  .mission-box h2, .vision-box h2 {
-    margin-bottom: 1rem;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .mission-box p, .vision-box p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #004d40;
-  }
+
   
  /* Styling for the Awards Section */
 .awards-section {
@@ -220,29 +242,27 @@ body, ul, li, a {
   overflow: hidden; /* Hide anything outside the container during the scroll */
 }
 
-.awards-section h2 {
-  color: black;
-  font-size: 2.5rem; /* Increase the font size of the title */
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-}
+
 
 /* Styling for the awards container to enable scrolling */
 .awards-container {
   display: flex;
-  justify-content: flex-start; /* Start the scrolling from the right */
+  justify-content:center;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 30px; /* Increase space between the award boxes */
-  animation: scroll-left 15s linear infinite; /* Scrolling effect */
+  /* animation: scroll-left 15s linear infinite; */
 }
 
 .award-box {
-  width: 300px; /* Increased width for larger award boxes */
-  padding: 0; /* Remove padding to make image cover the full box */
-  background-color: #f5f5f5; /* Add a background color to the box */
-  border-radius: 15px; /* Rounded corners */
+  width: 300px; 
+  padding: 0; 
+  background-color: #f5f5f5; 
+  border-radius: 15px; 
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More prominent shadow */
   text-align: center;
   overflow: hidden; /* Hide any image overflow */
+  padding: 1rem;
 }
 
 .award-box img {
@@ -252,19 +272,20 @@ body, ul, li, a {
 }
 
 .award-box p {
-  font-size: 1.rem; /* Increase font size for better readability */
-  color: #1AA79C;
+  font-size: 1rem; /* Increase font size for better readability */
+  color: #063f39;
   line-height: 1.5;
   padding: 10px; /* Add padding to the text for spacing */
+  font-weight: 600;
 }
 
 /* Keyframes for the scrolling animation */
 @keyframes scroll-left {
   0% {
-    transform: translateX(100%); /* Start from the right */
+    transform: translateX(100%);
   }
   100% {
-    transform: translateX(-100%); /* End at the left */
+    transform: translateX(-100%); 
   }
 }
 
@@ -274,11 +295,7 @@ body, ul, li, a {
     background-color: #f8f9fa;
 }
 
-.manager-section h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #333;
-}
+
 
 .manager-container {
     display: flex;
@@ -337,64 +354,9 @@ body, ul, li, a {
     color: #1AA79C;
 }
 
-  
-
-  /* Footer */
-.footer {
-  background-color: black;
-  color: white;
-  padding: 2rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.footer-left, .footer-center, .footer-right {
-  flex: 1;
-}
-
-.footer-right .social-icons a {
-  margin-right: 10px;
-}
-
-.footer-right .social-icons img {
-  width: 25px;
-  height: 25px;
-}
-
-.footer h3 {
-  margin-bottom: 10px;
-}
-
-.footer p, .footer a {
-  font-size: 1rem;
-  color: #fff;
-}
-
-.footer a:hover {
-  color: #ffdd57;
-}
-
-.mission-vision {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 1rem;
-   margin-bottom: 3rem;
-}
-
-.parent-container {
-  display: flex;
-  gap: 20px; /* Adds horizontal space between the cards */
-}
 
 .mission-card{
-  background: white;
+  background: #fff;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -405,7 +367,8 @@ body, ul, li, a {
   justify-content: center;
   color: #fff;
   gap: 1px;
-  margin-bottom: 20px; /* Adds space below each card */
+  margin-bottom: 20px;
+  height: 300px;
 }
 
 
@@ -421,7 +384,8 @@ body, ul, li, a {
   justify-content: center;
   color: #fff;
   gap: 10px;
-  margin-bottom: 20px; /* Adds space below each card */
+  margin-bottom: 20px; 
+  height: 300px;
 }
 .mission-card h3,.vision-card h3{
   margin-bottom: 1rem;
@@ -432,42 +396,170 @@ body, ul, li, a {
 .vision-card{
   background: #1AA79C;
 }
-.mission-vision-card-image {
-  position: relative;
-  overflow: hidden;
-  width: 120px;
-  text-align: center;
-  margin: 0 auto;
-  margin-bottom: 10px;
-  color: white;
-}
-
-.mission-vision-card-image::before {
-  content: ''; /* Empty content to create the overlay */
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
- 
-  z-index: 1; /* Position the overlay on top of the image */
-}
 
 .mission-vision-card-image img {
-  width: 80%;
-  filter: brightness(0) invert(1); /* Makes the image fully white */
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  filter: brightness(0) invert(1); 
+}
+
+@media screen and (max-width: 900px) {
+  .vision-card,.mission-card {
+    width: 100%; 
+    height: auto;
+  }
 }
 
 
 
 
-.mission-vision-card-image:hover img {
-transform: scale(1.1); /* Zoom in on hover */
-z-index: 1; /* Bring the image to the front */
-}.mission-vision,p{
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+  background-color: #000;
   color: white;
+  padding: 20px 0;
+  text-align: center;
 }
 
-  
-  
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-left {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.footer-left-left {
+  margin-right: 20px;
+}
+
+.footer-logo{
+  border-right: 1px solid #fff;
+}
+.footer-left-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-left-upper, .footer-left-lower {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.footer-left-upper p, .footer-left-lower p {
+  margin: 1rem 0;
+}
+.footer-left-upper i{
+  margin-right: 1rem;
+}
+.social-icons {
+  margin-block: 1rem;
+}
+.social-icons a {
+  color: #fff !important;
+  margin: 0 10px;
+  text-decoration: none;
+}
+.social-icons a i{
+  font-size: 1.5rem;
+}
+.quick-links{
+  margin-left: 2rem;
+}
+.quick-links p{
+  color: white;
+  text-align: left;
+  margin: 1rem 0;
+}
+.quick-links p a{
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #222;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1020px) {
+  .footer-content {
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+  }
+  .footer-logo{
+    border-right: none;
+    border-bottom: 1px solid #fff;
+  }
+  .footer-left {
+      flex-direction: column;
+      align-items: center;
+  }
+  .footer-left-upper, .footer-left-lower {
+    text-align: center;
+  }
+
+  .footer-left-left, .footer-left-right {
+      margin: 10px 0;
+  }
+}
+@media (max-width: 768px) {
+  .footer-content {
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+  }
+  .footer-logo{
+    border-right: none;
+    border-bottom: 1px solid #fff;
+  }
+  .footer-left {
+      flex-direction: column;
+      align-items: center;
+  }
+  .footer-left-upper, .footer-left-lower {
+    text-align: center;
+  }
+
+  .footer-left-left, .footer-left-right {
+      margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-icons a {
+      font-size: 18px;
+      margin: 5px;
+  }
+  .message-container {
+    margin-top: 7rem;
+
+  }
+}
   

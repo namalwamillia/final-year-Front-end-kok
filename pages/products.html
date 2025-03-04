@@ -6,6 +6,14 @@
     <title>Products - King of Kings</title>
     <link rel="stylesheet" href="../styles/products.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Header Section -->
@@ -13,14 +21,17 @@
     <div class="logo">
       <img src="logo.png" alt="King of Kings Logo">
     </div>
+    <div class="menu-icon">
+        <i class="fas fa-bars"></i> 
+      </div>
     <!-- Navigation Bar -->
-    <nav class="main-navbar">
+    <nav class="main-navbar"> 
       <ul>
         <li><a href="../home.html">Home</a></li>
-        <li><a href="kok dashboard.html">Dashboard</a></li>
+        <li><a href="about.html">About</a></li>
+        <!-- <li><a href="kok dashboard.html">Dashboard</a></li> -->
         <li><a href="products.html" class="active">Products</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
         <li><a href="kok_gallery.html">Gallery</a></li>
       </ul>
     </nav>
@@ -29,21 +40,21 @@
     <section class="product-section">
         <div class="product-header">
          
-            <h2>Our Products</h2>
+            <h2 class="section-title">Our Products</h2>
             <!-- <div class="search-bar">
                 <input type="text" placeholder="Search Products...">
                 <button><i class="fas fa-search"></i></button>
             </div> -->
         </div>
     
-        <h3>Processed Products</h3>
+        <h3 class="product-title">1. Processed Products</h3>
         <div class="product-outer-box">
             <div class="product-box">
                 <div class="product-image-box">
                     <img src="../images/oil_big-removebg-preview.png" alt="Processed Product 1">
                 </div>
                 <div class="product-details">
-                    <h4>Processed Product 1</h4>
+                    <h4 class="product-details-title">Processed Product 1</h4>
                     <p>Description of Processed Product 1.</p>
                     <p class="price">$10.99</p>
                     <a href="../pages/cart.html" class="add-to-cart-btn">Add to Cart</a>
@@ -55,7 +66,7 @@
                     <img src="../images/honey2-removebg-preview.png" alt="Processed Product 2">
                 </div>
                 <div class="product-details">
-                    <h4>Processed Product 2</h4>
+                    <h4 class="product-details-title">Processed Product 2</h4>
                     <p>Description of Processed Product 2.</p>
                     <p class="price">$8.99</p>
                     <a href="../pages/cart.html" class="add-to-cart-btn">Add to Cart</a>
@@ -67,23 +78,20 @@
                     <img src="../images/g.nuts-removebg-preview.png" alt="Processed Product 3">
                 </div>
                 <div class="product-details">
-                    <h4>Processed Product 3</h4>
+                    <h4 class="product-details-title">Processed Product 3</h4>
                     <p>Description of Processed Product 3.</p>
                     <p class="price">$12.49</p>
                     <a href="../pages/cart.html" class="add-to-cart-btn">Add to Cart</a>
                 </div>
             </div>
         </div>
-
-      
-    
         <div class="product-outer-box">
             <div class="product-box">
                 <div class="product-image-box">
                     <img src="../images/image.jpg" alt="Processed Product 1">
                 </div>
                 <div class="product-details">
-                    <h4>Processed Product 1</h4>
+                    <h4 class="product-details-title">Processed Product 1</h4>
                     <p>Description of Processed Product 1.</p>
                     <p class="price">$10.99</p>
                     <a href="../pages/cart.html" class="add-to-cart-btn">Add to Cart</a>
@@ -95,7 +103,7 @@
                     <img src="../images/blue_soap-removebg-preview (1).png" alt="Processed Product 2">
                 </div>
                 <div class="product-details">
-                    <h4>Processed Product 2</h4>
+                    <h4 class="product-details-title">Processed Product 2</h4>
                     <p>Description of Processed Product 2.</p>
                     <p class="price">$8.99</p>
                     <a href="../pages/cart.html" class="add-to-cart-btn">Add to Cart</a>
@@ -107,23 +115,20 @@
                     <img src="../images/white_soap2-removebg-preview.png" alt="Processed Product 3">
                 </div>
                 <div class="product-details">
-                    <h4>Processed Product 3</h4>
+                    <h4 class="product-details-title">Processed Product 3</h4>
                     <p>Description of Processed Product 3.</p>
                     <p class="price">$12.49</p>
                     <a href="../pages/cart.html" class="add-to-cart-btn">Add to Cart</a>
                 </div>
             </div>
         </div>
-
-        
-       
         <div class="product-outer-box">
             <div class="product-box">
                 <div class="product-image-box">
                     <img src="../images/maize brand.jpeg" alt="Processed Product 1">
                 </div>
                 <div class="product-details">
-                    <h4>Processed Product 1</h4>
+                    <h4 class="product-details-title">Processed Product 1</h4>
                     <p>Description of Processed Product 1.</p>
                     <p class="price">$10.99</p>
                     <a href="../pages/cart.html" class="add-to-cart-btn">Add to Cart</a>
@@ -135,7 +140,7 @@
                     <img src="../images/image13-removebg-preview.png" alt="Processed Product 2">
                 </div>
                 <div class="product-details">
-                    <h4>Processed Product 2</h4>
+                    <h4 class="product-details-title">Processed Product 2</h4>
                     <p>Description of Processed Product 2.</p>
                     <p class="price">$8.99</p>
                     <a href="../pages/cart.html" class="add-to-cart-btn">Add to Cart</a>
@@ -147,23 +152,20 @@
                     <img src="../images/oilmid-removebg-preview.png" alt="Processed Product 3">
                 </div>
                 <div class="product-details">
-                    <h4>Processed Product 3</h4>
+                    <h4 class="product-details-title">Processed Product 3</h4>
                     <p>Description of Processed Product 3.</p>
                     <p class="price">$12.49</p>
                     <a href="../pages/cart.html" class="add-to-cart-btn">Add to Cart</a>
                 </div>
             </div>
         </div>
-
-        
-      
         <div class="product-outer-box">
             <div class="product-box">
                 <div class="product-image-box">
                     <img src="../images/small_oil-removebg-preview.png" alt="Processed Product 1">
                 </div>
                 <div class="product-details">
-                    <h4>Processed Product 1</h4>
+                    <h4 class="product-details-title">Processed Product 1</h4>
                     <p>Description of Processed Product 1.</p>
                     <p class="price">$10.99</p>
                     <a href="../pages/cart.html" class="add-to-cart-btn">Add to Cart</a>
@@ -175,7 +177,7 @@
                     <img src="../images/honey-removebg-preview.png" alt="Processed Product 2">
                 </div>
                 <div class="product-details">
-                    <h4>Processed Product 2</h4>
+                    <h4 class="product-details-title">Processed Product 2</h4>
                     <p>Description of Processed Product 2.</p>
                     <p class="price">$8.99</p>
                     <a href="../pages/cart.html" class="add-to-cart-btn">Add to Cart</a>
@@ -184,15 +186,14 @@
     
             
         </div>
-    
-        <h3>Raw Products</h3>
+        <h3 class="product-title">2. Raw Products</h3>
         <div class="product-outer-box">
             <div class="product-box">
                 <div class="product-image-box">
                     <img src="../images/tomatoes-removebg-preview.png" alt="Raw Product 1">
                 </div>
                 <div class="product-details">
-                    <h4>Raw Product 1</h4>
+                    <h4 class="product-details-title">Raw Product 1</h4>
                     <p>Description of Raw Product 1.</p>
                     <p class="price">$5.99</p>
                     <a href="../pages/cart.html" class="add-to-cart-btn">Add to Cart</a>
@@ -204,7 +205,7 @@
                     <img src="../images/cabbages.jpeg" alt="Raw Product 2">
                 </div>
                 <div class="product-details">
-                    <h4>Raw Product 2</h4>
+                    <h4 class="product-details-title">Raw Product 2</h4>
                     <p>Description of Raw Product 2.</p>
                     <p class="price">$6.49</p>
                     <a href="../pages/cart.html" class="add-to-cart-btn">Add to Cart</a>
@@ -216,21 +217,20 @@
                     <img src="../images/onions.png" alt="Raw Product 3">
                 </div>
                 <div class="product-details">
-                    <h4>Raw Product 3</h4>
+                    <h4 class="product-details-title">Raw Product 3</h4>
                     <p>Description of Raw Product 3.</p>
                     <p class="price">$7.99</p>
                     <a href="../pages/cart.html" class="add-to-cart-btn">Add to Cart</a>
                 </div>
             </div>
         </div>
-
         <div class="product-outer-box">
             <div class="product-box">
                 <div class="product-image-box">
                     <img src="../images/soya_beans-removebg-preview.png" alt="Raw Product 1">
                 </div>
                 <div class="product-details">
-                    <h4>Raw Product 1</h4>
+                    <h4 class="product-details-title">Raw Product 1</h4>
                     <p>Description of Raw Product 1.</p>
                     <p class="price">$5.99</p>
                     <a href="../pages/cart.html" class="add-to-cart-btn">Add to Cart</a>
@@ -242,7 +242,7 @@
                     <img src="../images/maize2-removebg-preview.png" alt="Raw Product 2">
                 </div>
                 <div class="product-details">
-                    <h4>Raw Product 2</h4>
+                    <h4 class="product-details-title">Raw Product 2</h4>
                     <p>Description of Raw Product 2.</p>
                     <p class="price">$6.49</p>
                     <a href="../pages/cart.html" class="add-to-cart-btn">Add to Cart</a>
@@ -254,7 +254,7 @@
                     <img src="../images/beans.jpg" alt="Raw Product 3">
                 </div>
                 <div class="product-details">
-                    <h4>Raw Product 3</h4>
+                    <h4 class="product-details-title">Raw Product 3</h4>
                     <p>Description of Raw Product 3.</p>
                     <p class="price">$7.99</p>
                     <a href="../pages/cart.html" class="add-to-cart-btn">Add to Cart</a>
@@ -262,14 +262,13 @@
             </div>
 
         </div>
-
         <div class="product-outer-box">
             <div class="product-box">
                 <div class="product-image-box">
                     <img src="../images/simsim.jpg" alt="Raw Product 1">
                 </div>
                 <div class="product-details">
-                    <h4>Raw Product 1</h4>
+                    <h4 class="product-details-title">Raw Product 1</h4>
                     <p>Description of Raw Product 1.</p>
                     <p class="price">$5.99</p>
                     <a href="../pages/cart.html" class="add-to-cart-btn">Add to Cart</a>
@@ -281,7 +280,7 @@
                     <img src="../images/g.nut3.jpg" alt="Raw Product 2">
                 </div>
                 <div class="product-details">
-                    <h4>Raw Product 2</h4>
+                    <h4 class="product-details-title">Raw Product 2</h4>
                     <p>Description of Raw Product 2.</p>
                     <p class="price">$6.49</p>
                     <a href="../pages/cart.html" class="add-to-cart-btn">Add to Cart</a>
@@ -292,38 +291,54 @@
     </section>
 
          <!-- Footer Section -->
-   <footer class="footer">
-    <div class="footer-content">
-        <div class="footer-left">
-            <h3>Contact Us</h3>
-            <p>
-                <i class="fas fa-envelope"></i>
-                <a href="mailto:info@kingofkings.com">kahaps.org@gmail.com</a>
-              </p>
-              <p>
-                <i class="fas fa-phone"></i>
-                <a href="tel:+256772786985">+256392003729</a>
-              </p>
-        </div>
-        <div class="footer-center">
-            <h3>Location</h3>
-            <p>Plot 4, Chua Rd,<br>
-                Kitgum Municipality,<br>
-                Acholi Sub-Region,Uganda
-              </p>
-        </div>
-        <div class="footer-right">
-            <h3>Follow Us</h3>
-            <div class="social-icons">
-                <a href="#"><img src="../pages/fb.png" alt="Facebook"></a>
-                <a href="https://x.com/kingofkingsmic1"><img src="../pages/twit-rbg.png" alt="Twitter(X)"></a>
-                <a href="https://api.whatsapp.com/send/?phone=256772786985&text&type=phone_number&app_absent=0"><img src="../pages/whatsapp.png" alt="WhatsApp"></a>
-                <a href="#"><img src="../pages/in.png" alt="LinkedIn"></a>
+         <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                  <div class="footer-left-left">
+                    <div class="footer-logo">
+                      <img src="../images/logo.png" alt="Logo" class="logo-image">
+                    </div>  
+                  </div>
+                  <div class="footer-left-right">
+                    <div class="footer-left-upper">
+                      <h3>Contact Us</h3>
+                      <p>
+                          <i class="fas fa-envelope"></i>
+                          <a href="mailto:info@kingofkings.com" style="color:#fff">kahaps.org@gmail.com</a>
+                        </p>
+                        <p>
+                          <i class="fas fa-phone"></i>
+                          <a href="tel:+256772786985" style="color: #fff;">+256392003729</a>
+                        </p>
+                        <p>
+                          <i class='bx bxs-map-pin'></i>
+                          <span>Plot 4, Chua Rd, Kitgum Municipality,Acholi Sub-Region,Uganda</span>
+                        </p>
+                    </div>
+                    <div class="footer-left-lower">
+                      <h3>Follow Us</h3>
+                      <div class="social-icons">
+                          <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
+                          <a href="https://x.com/kingofkingsmic1"><i class='bx bxl-twitter'></i></a>
+                          <a href="https://api.whatsapp.com/send/?phone=256772786985&text&type=phone_number&app_absent=0"><i class='bx bxl-whatsapp'></i></a>
+                          <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+                          
+                      </div>
+                    </div>
+                  </div>  
+                </div>
+                <div class="quick-links">
+                  <h3>Quick Links</h3>
+                  <p><a href="./pages/products.html" style="color: white;"><i class='bx bx-chevrons-right'></i> Products</a></p>
+                  <p><a href="./pages/services.html" style="color: white;"><i class='bx bx-chevrons-right'></i> Services</a></p>
+                  <p><a href="./pages/about.html" style="color: white;"><i class='bx bx-chevrons-right'></i> About Us</a></p>
+                  <p><a href="./pages/kok_gallery.html" style="color: white;"><i class='bx bx-chevrons-right'></i> Gallery</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
                 <p>&copy; 2025 King of Kings. All rights reserved.</p>
             </div>
-        </div>
-      </div>
-</footer>
+          </footer>
 
         <script>
             // Function to add products to the cart
@@ -368,6 +383,8 @@
               });
             });
           </script>
+
+          <script src="../scripts/commonscripts.js"></script>
           
 </body>
 </html>

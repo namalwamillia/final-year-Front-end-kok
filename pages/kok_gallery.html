@@ -4,249 +4,79 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>King of Kings Gallery</title>
-  <link rel="stylesheet" href="gallery.css">
-<style type="text/css" id="dcoder_stylesheet">
-  /* General Reset */
-body, ul, li, a {
-margin: 0;
-padding: 0;
-list-style: none;
-text-decoration: none;
-font-family: Arial, sans-serif;
-}
-
-/* Header Styling */
-.header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-background-color: #1AA79C; /* Dark green */
-padding: 10px 20px;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Logo Styling */
-.logo {
-background-color: white; /* White circular background */
-border-radius: 50%; /* Makes it circular */
-display: flex;
-justify-content: center;
-align-items: center;
-height: 80px; /* Adjust to fit your design */
-width: 80px; /* Make it a perfect circle */
-overflow: hidden; /* Ensures the image doesn't overflow */
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
-}
-
-.logo img {
-height: 60%; /* Adjust size of the logo inside the circle */
-width: auto; /* Maintain aspect ratio */
-}
-
-/* Navigation Bar Styling */
-.main-navbar ul {
-display: flex;
-gap: 20px;
-}
-
-.main-navbar li {
-position: relative;
-}
-
-.main-navbar a {
-color: white;
-font-size: 16px;
-padding: 8px 12px;
-border-radius: 5px;
-transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.main-navbar a:hover, .main-navbar a.active {
-background-color: #063f39; /* Dark green */
-color: #ffffff;
-}
-
-/* Dropdown Example (Optional for Nested Menus) */
-.main-navbar li:hover > ul {
-display: block;
-}
-
-.main-navbar ul ul {
-display: none;
-position: absolute;
-top: 100%;
-left: 0;
-background-color: #004d40;
-padding: 30px 0;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.main-navbar ul ul li {
-width: 150px;
-}
-
-.main-navbar ul ul a {
-padding: 8px 12px;
-}
-
-/* Mobile Responsiveness */
-@media screen and (max-width: 768px) {
-.header {
-flex-direction: column;
-align-items: flex-start;
-}
-
-.main-navbar ul {
-flex-direction: column;
-gap: 10px;
-}
-}
-
-h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-#gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.gallery-item {
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 8px;
-  border-color: #004d40;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.gallery-item img {
-  max-width: 100%;
-  border-radius: 8px;
-  height: auto;
-}
-
-.gallery-item h2 {
-  font-size: 1.5em;
-  margin: 15px 0;
-}
-
-.gallery-item p {
-  font-size: 1em;
-  color: #666;
-}
-
-.gallery-item a {
-  text-decoration: none;
-  color: #4CAF50;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-.gallery-item a:hover {
-  color: #333;
-}
-/* Footer */
-.footer {
-  background-color: #1AA79C;
-  color: white;
-  padding: 2rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.footer-left, .footer-center, .footer-right {
-  flex: 1;
-}
-
-.footer-right .social-icons a {
-  margin-right: 10px;
-}
-
-.footer-right .social-icons img {
-  width: 25px;
-  height: 25px;
-}
-
-.footer h3 {
-  margin-bottom: 10px;
-}
-
-.footer p, .footer a {
-  font-size: 1rem;
-  color: #fff;
-}
-
-.footer a:hover {
-  color: #ffdd57;
-}
-
-</style></head>
+  <link rel="stylesheet" href="../styles/gallery.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
 <body>
     <!-- Header Section -->
     <header class="header">
       <div class="logo">
         <img src="logo.png" alt="King of Kings Logo">
       </div>
+      <div class="menu-icon">
+        <i class="fas fa-bars"></i> 
+      </div>
       <!-- Navigation Bar -->
       <nav class="main-navbar">
         <ul>
           <li><a href="../home.html">Home</a></li>
-          <li><a href="kok dashboard.html">Dashboard</a></li>
+          <li><a href="about.html">About</a></li>
+          <!-- <li><a href="kok dashboard.html">Dashboard</a></li> -->
           <li><a href="products.html">Products</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="about.html">About</a></li>
           <li><a href="kok_gallery.html" class="active">Gallery</a></li>
         </ul>
       </nav>
     </header>
-    <h1>King of Kings Gallery</h1>
-  <section id="gallery">
-    <!-- Seeds Section -->
-    <div class="gallery-item">
-      <img src="../images/beans.jpg" alt="Seeds">
-      <h2>High-Quality Seeds</h2>
-      <p>Our premium seeds ensure a healthy harvest. <a href="seeds.html">Learn more</a></p>
-    </div>
-
-    <!-- Fertilizers Section -->
-    <div class="gallery-item">
-      <img src="../images/tomato.jpeg" alt="Fertilizer">
-      <h2>Quality Fresh Fruits and Vegetables </h2>
-      <p>Get the best fresh and vegetables from us. <a href="fruits&veges.html">Learn more</a></p>
-    </div>
-
-    <!-- Tools Section -->
-    <div class="gallery-item">
-      <img src="../images/seedlings.png" alt="Garden Tools">
-      <h2>Garden seedlings</h2>
-      <p>Get the best and fast growing seedlings from us. <a href="gardenSeedlings.html">Learn more</a></p>
-    </div>
-
-    <!-- Awards Section -->
-    <div class="gallery-item">
-      <img src="../images/world food day.png" alt="Award">
-      <h2>Among Top five Best Agri-Businesses 2024</h2>
-      <p>Recognized for outstanding performance in the agricultural sector. <a href="awards.html">See awards</a></p>
-    </div>
-
-    <!-- Shows Section -->
-    <div class="gallery-item">
-      <img src="../images/World-Food-Day-2022-commemorations.jpeg" alt="Agricultural Show">
-      <h2>National Agricultural Show 2024</h2>
-      <p>Participated in one of the biggest agriculture events in Uganda. <a href="shows.html">Read more</a></p>
+    
+  <section id="gallery" class="gallery">
+    <h1 class="section-title">King of Kings Gallery</h1>
+    <div class="gallery-items">
+      <div class="gallery-item">
+        <img src="../images/beans.jpg" alt="Seeds">
+        <h2>High-Quality Seeds</h2>
+        <p>Our premium seeds ensure a healthy harvest.</p>
+        <a href="seeds.html">Learn more</a>
+      </div>
+  
+      <!-- Fertilizers Section -->
+      <div class="gallery-item">
+        <img src="../images/tomato.jpeg" alt="Fertilizer">
+        <h2>Quality Fresh Fruits and Vegetables </h2>
+        <p>Get the best fresh and vegetables from us.</p>
+        <a href="fruits&veges.html">Learn more</a>
+      </div>
+  
+      <!-- Tools Section -->
+      <div class="gallery-item">
+        <img src="../images/seedlings.png" alt="Garden Tools">
+        <h2>Garden seedlings</h2>
+        <p>Get the best and fast growing seedlings from us.</p>
+        <a href="gardenSeedlings.html">Learn more</a>
+      </div>
+  
+      <!-- Awards Section -->
+      <div class="gallery-item">
+        <img src="../images/world food day.png" alt="Award">
+        <h2>Among Top five Best Agri-Businesses 2024</h2>
+        <p>Recognized for outstanding performance in the agricultural sector.</p>
+        <a href="awards.html">See awards</a>
+      </div>
+  
+      <!-- Shows Section -->
+      <div class="gallery-item">
+        <img src="../images/World-Food-Day-2022-commemorations.jpeg" alt="Agricultural Show">
+        <h2>National Agricultural Show 2024</h2>
+        <p>Participated in one of the biggest agriculture events in Uganda.</p>
+        <a href="shows.html">Read more</a>
+      </div>
     </div>
   </section>
 
@@ -255,34 +85,51 @@ h1 {
    <footer class="footer">
     <div class="footer-content">
         <div class="footer-left">
-            <h3>Contact Us</h3>
-            <p>
-                <i class="fas fa-envelope"></i>
-                <a href="mailto:info@kingofkings.com">kahaps.org@gmail.com</a>
-              </p>
+          <div class="footer-left-left">
+            <div class="footer-logo">
+              <img src="../images/logo.png" alt="Logo" class="logo-image">
+            </div>  
+          </div>
+          <div class="footer-left-right">
+            <div class="footer-left-upper">
+              <h3>Contact Us</h3>
               <p>
-                <i class="fas fa-phone"></i>
-                <a href="tel:+256772786985">+256392003729</a>
-              </p>
-        </div>
-        <div class="footer-center">
-            <h3>Location</h3>
-            <p>Plot 4, Chua Rd,<br>
-                Kitgum Municipality,<br>
-                Acholi Sub-Region,Uganda
-              </p>
-        </div>
-        <div class="footer-right">
-            <h3>Follow Us</h3>
-            <div class="social-icons">
-                <a href="#"><img src="../pages/fb.png" alt="Facebook"></a>
-                <a href="https://x.com/kingofkingsmic1"><img src="../pages/twit-rbg.png" alt="Twitter(X)"></a>
-                <a href="https://api.whatsapp.com/send/?phone=256772786985&text&type=phone_number&app_absent=0"><img src="../pages/whatsapp.png" alt="WhatsApp"></a>
-                <a href="#"><img src="../pages/in.png" alt="LinkedIn"></a>
-                <p>&copy; 2025 King of Kings. All rights reserved.</p>
+                  <i class="fas fa-envelope"></i>
+                  <a href="mailto:info@kingofkings.com" style="color:#fff">kahaps.org@gmail.com</a>
+                </p>
+                <p>
+                  <i class="fas fa-phone"></i>
+                  <a href="tel:+256772786985" style="color: #fff;">+256392003729</a>
+                </p>
+                <p>
+                  <i class='bx bxs-map-pin'></i>
+                  <span>Plot 4, Chua Rd, Kitgum Municipality,Acholi Sub-Region,Uganda</span>
+                </p>
             </div>
+            <div class="footer-left-lower">
+              <h3>Follow Us</h3>
+              <div class="social-icons">
+                  <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
+                  <a href="https://x.com/kingofkingsmic1"><i class='bx bxl-twitter'></i></a>
+                  <a href="https://api.whatsapp.com/send/?phone=256772786985&text&type=phone_number&app_absent=0"><i class='bx bxl-whatsapp'></i></a>
+                  <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+                  
+              </div>
+            </div>
+          </div>  
         </div>
-      </div>
-</footer>
-
-</body></html>
+        <div class="quick-links">
+          <h3>Quick Links</h3>
+          <p><a href="./pages/products.html" style="color: white;"><i class='bx bx-chevrons-right'></i> Products</a></p>
+          <p><a href="./pages/services.html" style="color: white;"><i class='bx bx-chevrons-right'></i> Services</a></p>
+          <p><a href="./pages/about.html" style="color: white;"><i class='bx bx-chevrons-right'></i> About Us</a></p>
+          <p><a href="./pages/kok_gallery.html" style="color: white;"><i class='bx bx-chevrons-right'></i> Gallery</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 King of Kings. All rights reserved.</p>
+    </div>
+   </footer>
+   <script src="../scripts/commonscripts.js"></script>
+  </body>
+</html>
