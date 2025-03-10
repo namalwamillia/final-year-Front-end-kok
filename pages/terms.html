@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    transition: 0.2s ease-in-out;
+  }
+  
+  ul, li, a {
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1AA79C;
+    margin: 2rem auto;
+    text-align: center;
+  }
+  /* Header Styling (Stays Fixed at the Top) */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1AA79C; /* Dark green */
+    padding: 1rem 6rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  
+  }
+  
+  /* Logo Styling */
+  .logo {
+    background-color: white; /* White circular background */
+    border-radius: 50%; /* Makes it circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px; /* Adjust to fit your design */
+    width: 80px; /* Make it a perfect circle */
+    overflow: hidden; /* Ensures the image doesn't overflow */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  }
+  
+  .logo img {
+    height: 60%; /* Adjust size of the logo inside the circle */
+    width: auto; /* Maintain aspect ratio */
+  }
+  
+  /* Navigation Bar Styling */
+  .main-navbar ul {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .main-navbar li {
+    position: relative;
+  }
+  
+  .main-navbar a {
+    color: white;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+  }
+  
+  .main-navbar a:hover, .main-navbar a.active {
+    background-color: #063f39; /* Dark green */
+    color: #ffffff;
+    
+  }
+  .menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+  }
+  /* Mobile Responsiveness */
+  @media screen and (max-width: 768px) {
+    .menu-icon {
+      display: block; 
+    }
+    .header {
+      align-items: center;
+      justify-content: space-between;
+      padding-inline: 2rem;
+    }
+    
+    .main-navbar {
+      display: none; /* Hide navbar initially */
+      position: absolute;
+      top: 80px;
+      left:0;
+      width: 100%;
+      text-align: center;
+      background-color: #1AA79C;
+    }
+    .header .main-navbar li{
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      border-bottom: 1px solid #fff;
+      text-align: center;
+    }
+    .header .main-navbar li a{
+      width: 100%;
+    }
+    .main-navbar {
+      margin-top: 1rem;
+    }
+    .main-navbar ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .main-navbar.active {
+      display: block;
+    }
+  
+  }
+
+  footer {
+    background-color: #000;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footer-left {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  
+  .footer-left-left {
+    margin-right: 20px;
+  }
+  
+  .footer-logo{
+    border-right: 1px solid #fff;
+  }
+  .footer-left-right {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-left-upper, .footer-left-lower {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .footer-left-upper p, .footer-left-lower p {
+    margin: 1rem 0;
+  }
+  .footer-left-upper i{
+    margin-right: 1rem;
+  }
+  .social-icons {
+    margin-block: 1rem;
+  }
+  .social-icons a {
+    color: #fff !important;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  .social-icons a i{
+    font-size: 1.5rem;
+  }
+  .quick-links{
+    margin-left: 2rem;
+  }
+  .quick-links p{
+    color: white;
+    text-align: left;
+    margin: 1rem 0;
+  }
+  .quick-links p a{
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #222;
+    margin-top: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1020px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-logo{
+      border-right: none;
+      border-bottom: 1px solid #fff;
+    }
+    .footer-left {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-left-upper, .footer-left-lower {
+      text-align: center;
+    }
+  
+    .footer-left-left, .footer-left-right {
+        margin: 10px 0;
+    }
+  }
+  @media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-logo{
+      border-right: none;
+      border-bottom: 1px solid #fff;
+    }
+    .footer-left {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-left-upper, .footer-left-lower {
+      text-align: center;
+    }
+  
+    .footer-left-left, .footer-left-right {
+        margin: 10px 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .social-icons a {
+        font-size: 18px;
+        margin: 5px;
+    }
+  }
+  
+  
+    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>King of Kings</title>
+  <link rel="stylesheet" type="text/css" href="./home.css">
+  <!-- Font Awesome Link -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="./images/logo.png" alt="King of Kings Logo">
+    </div>
+    <div class="menu-icon">
+      <i class="fas fa-bars"></i> 
+    </div>
+    <!-- Navigation Bar -->
+    <nav class="main-navbar">
+      <ul>
+        <li><a href="home.html" class="active">Home</a></li>
+        <li><a href="./pages/about.html">About</a></li>
+        <!-- <li><a href="./pages/kok dashboard.html">Dashboard</a></li> -->
+        <li><a href="./pages/products.html" >Products</a></li>
+        <li><a href="./pages/services.html">Services</a></li>
+        <li><a href="./pages/kok_gallery.html">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="welcome-page" id="welcome-page">
+  
+  </section>
+
+<!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-left">
+          <div class="footer-left-left">
+            <div class="footer-logo">
+              <img src="./images/logo.png" alt="Logo" class="logo-image">
+            </div>  
+          </div>
+          <div class="footer-left-right">
+            <div class="footer-left-upper">
+              <h3>Contact Us</h3>
+              <p>
+                  <i class="fas fa-envelope"></i>
+                  <a href="mailto:info@kingofkings.com" style="color:#fff">kahaps.org@gmail.com</a>
+                </p>
+                <p>
+                  <i class="fas fa-phone"></i>
+                  <a href="tel:+256772786985" style="color: #fff;">+256392003729</a>
+                </p>
+                <p>
+                  <i class='bx bxs-map-pin'></i>
+                  <span>Plot 4, Chua Rd, Kitgum Municipality,Acholi Sub-Region,Uganda</span>
+                </p>
+            </div>
+            <div class="footer-left-lower">
+              <h3>Follow Us</h3>
+              <div class="social-icons">
+                  <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
+                  <a href="https://x.com/kingofkingsmic1"><i class='bx bxl-twitter'></i></a>
+                  <a href="https://api.whatsapp.com/send/?phone=256772786985&text&type=phone_number&app_absent=0"><i class='bx bxl-whatsapp'></i></a>
+                  <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+                  
+              </div>
+            </div>
+          </div>  
+        </div>
+        <div class="quick-links">
+          <h3>Quick Links</h3>
+          <p><a href="./pages/products.html" style="color: white;"><i class='bx bx-chevrons-right'></i> Products</a></p>
+          <p><a href="./pages/services.html" style="color: white;"><i class='bx bx-chevrons-right'></i> Services</a></p>
+          <p><a href="./pages/about.html" style="color: white;"><i class='bx bx-chevrons-right'></i> About Us</a></p>
+          <p><a href="./pages/kok_gallery.html" style="color: white;"><i class='bx bx-chevrons-right'></i> Gallery</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 King of Kings. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="scripts/commonscripts.js"></script>
+  <script src="scripts/home.js"></script>
+</body>
+</html>
