@@ -1,32 +1,278 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventory Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
-<style type="text/css" id="dcoder_stylesheet">/* General Styles */
-body {
-    /* General Reset */
-body, ul, li, a {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-    font-family: Arial, sans-serif;
+    <style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+    
+    .dashboard-container {
+        display: flex;
+        min-height: 100vh;
+    }
+    
+    /* Sidebar */
+    .sidebar {
+        width: 250px;
+        background-color: #20b2aa;
+        color: white;
+        padding: 20px;
+    }
+    
+    .sidebar h2 {
+        margin-bottom: 15px;
+        padding-bottom: 5vh;
+      
+    
+    }
+    
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+        
+    }
+    
+    .sidebar ul li {
+      
+        padding: 10px 15px;  /* Adjusts padding for balanced spacing */
+        display: block;  
+      
+
+        /* Ensures full width for centering */
+    }
+    
+    .sidebar ul li:hover {
+        background-color: #063f39; /* Dark green */
+        color: #ffffff;
+        padding: 10px 15px; /* Equal padding on both sides */
+        border-radius: 5px; /* Optional: Adds smooth corners */
+        width: auto; /* Ensures it doesn't stretch the full width */
+        margin: 0 auto; /* Centers the element */
+    }
+    
+    .sidebar ul li.active{
+        background-color: #063f39; /* Dark green */
+        color: #ffffff;
+    }
+
+
+    
+    /* Main Content */
+    .main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    /* Header */
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color:  #e9e0e1;
+        padding: 10px;
+        border-radius: 8px;
+    }
+    
+    .header input {
+        padding: 5px;
+        width: 200px;
+    }
+    
+    .header button {
+        padding: 5px 10px;
+        background-color:  #063f39;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .profile {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    /* Featured Content */
+    .featured-content {
+        margin-top: 20px;
+        background-color:  #e9e0e1;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+    }
+    
+    /* Products */
+    .products {
+        margin-top: 20px;
+    }
+    
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+        margin-top: 10px;
+    }
+    
+    .product-item {
+        background-color:  #e9e0e1;
+        height: 100px;
+        border-radius: 8px;
+    }
+    
+    /* Footer */
+    .footer {
+        margin-top: 20px;
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        border-radius: 8px;
+    }
+    
+    
+
+
+footer {
+    background-color: #000;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
   }
   
-  /* Header Styling */
-  .header {
+  .footer-content {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1AA79C; /* Dark green */
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
   }
   
-  /* Logo Styling */
+  .footer-left {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  
+  .footer-left-left {
+    margin-right: 20px;
+  }
+  
+  .footer-logo{
+    border-right: 1px solid #fff;
+  }
+  .footer-left-right {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-left-upper, .footer-left-lower {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .footer-left-upper p, .footer-left-lower p {
+    margin: 1rem 0;
+  }
+  .footer-left-upper i{
+    margin-right: 1rem;
+  }
+  .social-icons {
+    margin-block: 1rem;
+  }
+  .social-icons a {
+    color: #fff !important;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  .social-icons a i{
+    font-size: 1.5rem;
+  }
+  .quick-links{
+    margin-left: 2rem;
+  }
+  .quick-links p{
+    color: white;
+    text-align: left;
+    margin: 1rem 0;
+  }
+  .quick-links p a{
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #222;
+    margin-top: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1020px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-logo{
+      border-right: none;
+      border-bottom: 1px solid #fff;
+    }
+    .footer-left {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-left-upper, .footer-left-lower {
+      text-align: center;
+    }
+  
+    .footer-left-left, .footer-left-right {
+        margin: 10px 0;
+    }
+  }
+  @media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-logo{
+      border-right: none;
+      border-bottom: 1px solid #fff;
+    }
+    .footer-left {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-left-upper, .footer-left-lower {
+      text-align: center;
+    }
+  
+    .footer-left-left, .footer-left-right {
+        margin: 10px 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .social-icons a {
+        font-size: 18px;
+        margin: 5px;
+    }
+  }
+  
+
+  
   .logo {
     background-color: white; /* White circular background */
     border-radius: 50%; /* Makes it circular */
@@ -43,367 +289,212 @@ body, ul, li, a {
     height: 60%; /* Adjust size of the logo inside the circle */
     width: auto; /* Maintain aspect ratio */
   }
+
   
-  /* Navigation Bar Styling */
-  .main-navbar ul {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .main-navbar li {
-    position: relative;
-  }
-  
-  .main-navbar a {
-    color: white;
-    font-size: 16px;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .main-navbar a:hover, .main-navbar a.active {
-    background-color: #063f39; /* Dark green */
-    color: #ffffff;
-  }
-  
-  /* Dropdown Example (Optional for Nested Menus) */
-  .main-navbar li:hover > ul {
-    display: block;
-  }
-  
-  .main-navbar ul ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #004d40;
-    padding: 30px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  .main-navbar ul ul li {
-    width: 150px;
-  }
-  
-  .main-navbar ul ul a {
-    padding: 8px 12px;
-  }
-  
-  /* Mobile Responsiveness */
-  @media screen and (max-width: 768px) {
-    .header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .main-navbar ul {
-      flex-direction: column;
-      gap: 10px;
-    }
-  }
-}
-
-/* Dashboard Layout */
-.dashboard-container {
-    padding: 2rem;
-}
-
-.stock-overview h2 {
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: #444;
-    margin-bottom: 1rem;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-/* Product Cards */
-.card {
-    background-color: white;
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-}
-
-.card:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.card h3 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 0.75rem;
-}
-
-.card p {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 0.5rem;
-}
-
-/* Footer */
-.footer {
-    background-color: #1AA79C;
-    color: white;
-    padding: 2rem;
-    display: flex;
-    justify-content: space-between;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.footer-left, .footer-center, .footer-right {
-    flex: 1;
-}
-
-.footer-right .social-icons a {
-    margin-right: 10px;
-}
-
-.footer-right .social-icons img {
-    width: 25px;
-    height: 25px;
-}
-
-.footer h3 {
-    margin-bottom: 10px;
-}
-
-.footer p, .footer a {
-    font-size: 1rem;
-    color: #fff;
-}
-
-.footer a:hover {
-    color: #ffdd57;
-}</style></head>
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+    
+      
+</head>
 <body>
-  <!-- Header Section -->
-  <header class="header">
-    <div class="logo">
-      <img src="logo.png" alt="King of Kings Logo">
-    </div>
-    <!-- Navigation Bar -->
-    <nav class="main-navbar">
-      <ul>
-        <li><a href="../home.html">Home</a></li>
-        <li><a href="kok dashboard.html" class="active">Dashboard</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-      </ul>
-    </nav>
-  </header>
-
-    <!-- Dashboard Section -->
     <div class="dashboard-container">
-        <!-- Processed Products Section -->
-        <section class="stock-overview">
-            <h2>Processed Products</h2>
-            <div class="product-grid">
-                <!-- Example Processed Product Cards (12 products) -->
-                <div class="card">
-                    <h3>Processed Product 1</h3>
-                    <p>Sold: 30</p>
-                    <p>Remaining: 20</p>
-                    <p>In Process: 10</p>
-                    <p>In Delivery: 5</p>
-                </div>
-                <div class="card">
-                    <h3>Processed Product 2</h3>
-                    <p>Sold: 15</p>
-                    <p>Remaining: 35</p>
-                    <p>In Process: 7</p>
-                    <p>In Delivery: 3</p>
-                </div>
-                <div class="card">
-                    <h3>Processed Product 3</h3>
-                    <p>Sold: 50</p>
-                    <p>Remaining: 10</p>
-                    <p>In Process: 2</p>
-                    <p>In Delivery: 8</p>
-                </div>
-                <div class="card">
-                    <h3>Processed Product 4</h3>
-                    <p>Sold: 40</p>
-                    <p>Remaining: 5</p>
-                    <p>In Process: 15</p>
-                    <p>In Delivery: 5</p>
-                </div>
-                <div class="card">
-                    <h3>Processed Product 5</h3>
-                    <p>Sold: 25</p>
-                    <p>Remaining: 30</p>
-                    <p>In Process: 5</p>
-                    <p>In Delivery: 10</p>
-                </div>
-                <div class="card">
-                    <h3>Processed Product 6</h3>
-                    <p>Sold: 10</p>
-                    <p>Remaining: 40</p>
-                    <p>In Process: 8</p>
-                    <p>In Delivery: 5</p>
-                </div>
-                <div class="card">
-                    <h3>Processed Product 7</h3>
-                    <p>Sold: 60</p>
-                    <p>Remaining: 15</p>
-                    <p>In Process: 6</p>
-                    <p>In Delivery: 3</p>
-                </div>
-                <div class="card">
-                    <h3>Processed Product 8</h3>
-                    <p>Sold: 20</p>
-                    <p>Remaining: 25</p>
-                    <p>In Process: 12</p>
-                    <p>In Delivery: 8</p>
-                </div>
-                <div class="card">
-                    <h3>Processed Product 9</h3>
-                    <p>Sold: 35</p>
-                    <p>Remaining: 15</p>
-                    <p>In Process: 10</p>
-                    <p>In Delivery: 4</p>
-                </div>
-                <div class="card">
-                    <h3>Processed Product 10</h3>
-                    <p>Sold: 30</p>
-                    <p>Remaining: 50</p>
-                    <p>In Process: 7</p>
-                    <p>In Delivery: 2</p>
-                </div>
-                <div class="card">
-                    <h3>Processed Product 11</h3>
-                    <p>Sold: 50</p>
-                    <p>Remaining: 25</p>
-                    <p>In Process: 12</p>
-                    <p>In Delivery: 10</p>
-                </div>
-                <div class="card">
-                    <h3>Processed Product 12</h3>
-                    <p>Sold: 45</p>
-                    <p>Remaining: 35</p>
-                    <p>In Process: 6</p>
-                    <p>In Delivery: 4</p>
-                </div>
-            </div>
-        </section>
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>DashBoard</h2>
+    
+            <ul>
+                <li>My Account</li>
+                <li>Orders</li>
+                <li>Products</li>
+                <li>Inbox</li>
+                <li>Featured Sales</li>
+                <li>Account Mgt</li>
+                <li>Payment</li>
+                <li><a href="../home.html" style="text-decoration: none; color: white;">Logout</a></li>
 
-        <!-- Raw Products Section -->
-        <section class="stock-overview">
-            <h2>Raw Products</h2>
-            <div class="product-grid">
-                <!-- Example Raw Product Cards (9 products) -->
-                <div class="card">
-                    <h3>Raw Product 1</h3>
-                    <p>Sold: 70</p>
-                    <p>Remaining: 10</p>
-                    <p>In Process: 5</p>
-                    <p>In Delivery: 3</p>
-                </div>
-                <div class="card">
-                    <h3>Raw Product 2</h3>
-                    <p>Sold: 25</p>
-                    <p>Remaining: 40</p>
-                    <p>In Process: 15</p>
-                    <p>In Delivery: 10</p>
-                </div>
-                <div class="card">
-                    <h3>Raw Product 3</h3>
-                    <p>Sold: 55</p>
-                    <p>Remaining: 10</p>
-                    <p>In Process: 10</p>
-                    <p>In Delivery: 5</p>
-                </div>
-                <div class="card">
-                    <h3>Raw Product 4</h3>
-                    <p>Sold: 25</p>
-                    <p>Remaining: 30</p>
-                    <p>In Process: 6</p>
-                    <p>In Delivery: 2</p>
-                </div>
-                <div class="card">
-                    <h3>Raw Product 5</h3>
-                    <p>Sold: 35</p>
-                    <p>Remaining: 15</p>
-                    <p>In Process: 8</p>
-                    <p>In Delivery: 4</p>
-                </div>
-                <div class="card">
-                    <h3>Raw Product 6</h3>
-                    <p>Sold: 40</p>
-                    <p>Remaining: 20</p>
-                    <p>In Process: 9</p>
-                    <p>In Delivery: 3</p>
-                </div>
-                <div class="card">
-                    <h3>Raw Product 7</h3>
-                    <p>Sold: 30</p>
-                    <p>Remaining: 25</p>
-                    <p>In Process: 6</p>
-                    <p>In Delivery: 2</p>
-                </div>
-                <div class="card">
-                    <h3>Raw Product 8</h3>
-                    <p>Sold: 45</p>
-                    <p>Remaining: 20</p>
-                    <p>In Process: 12</p>
-                    <p>In Delivery: 8</p>
-                </div>
-                <div class="card">
-                    <h3>Raw Product 9</h3>
-                    <p>Sold: 20</p>
-                    <p>Remaining: 30</p>
-                    <p>In Process: 4</p>
-                    <p>In Delivery: 3</p>
-                </div>
-            </div>
-        </section>
-    </div>
 
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-left">
-                <h3>Contact Us</h3>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="logo">
+                    <img src="logo.png" alt="King of Kings Logo">
+                </div>
+                <input type="text" placeholder="Search...">
+                <button>Search</button>
+                <div class="profile">
+                    <span>Hi, Millia</span>
+                    <span>🛒</span>
+                </div>
+            </header>
+            
+            
+
+            <!-- Featured Content -->
+            <section class="featured-content">
+                <div class="content-box">Featured Content</div>
+            </section>
+
+            <!-- Products Section -->
+            <section class="products">
+                <h2>Products</h2>
+                <div class="product-grid">
+                    <div class="product-item"></div>
+                    <div class="product-item"></div>
+                    <div class="product-item"></div>
+                    <div class="product-item"></div>
+                    <div class="product-item"></div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-left">
+          <div class="footer-left-left">
+            <div class="footer-logo">
+              <img src="../images/logo.png" alt="Logo" class="logo-image">
+            </div>  
+          </div>
+          <div class="footer-left-right">
+            <div class="footer-left-upper">
+              <h3>Contact Us</h3>
+              <p>
+                <i class="fas fa-envelope" style="color: white;"></i>
+
+                  <a href="mailto:info@kingofkings.com" style="color:#fff">kahaps.org@gmail.com</a>
+                </p>
                 <p>
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:info@kingofkings.com">kahaps.org@gmail.com</a>
-                  </p>
-                  <p>
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:+256772786985">+256392003729</a>
-                  </p>
+                  <i class="fas fa-phone"></i>
+                  <a href="tel:+256772786985" style="color: #fff;">+256392003729</a>
+                </p>
+                <p>
+                  <i class='bx bxs-map-pin'></i>
+                  <span>Plot 4, Chua Rd, Kitgum Municipality,Acholi Sub-Region,Uganda</span>
+                </p>
             </div>
-            <div class="footer-center">
-                <h3>Location</h3>
-                <p>Plot 4, Chua Rd,<br>
-                    Kitgum Municipality,<br>
-                    Acholi Sub-Region,Uganda
-                  </p>
+            <div class="footer-left-lower">
+              <h3>Follow Us</h3>
+              <div class="social-icons">
+                  <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
+                  <a href="https://x.com/kingofkingsmic1"><i class='bx bxl-twitter'></i></a>
+                  <a href="https://api.whatsapp.com/send/?phone=256772786985&text&type=phone_number&app_absent=0"><i class='bx bxl-whatsapp'></i></a>
+                  <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+                  
+              </div>
             </div>
-            <div class="footer-right">
-                <h3>Follow Us</h3>
-                <div class="social-icons">
-                    <a href="#"><img src="fb.png" alt="Facebook"></a>
-                    <a href="https://x.com/kingofkingsmic1"><img src="twit-rbg.png" alt="Twitter(X)"></a>
-                    <a href="https://api.whatsapp.com/send/?phone=256772786985&text&type=phone_number&app_absent=0"><img src="whatsapp.png" alt="WhatsApp"></a>
-                    <a href="#"><img src="in.png" alt="LinkedIn"></a>
-                    <p>&copy; 2025 King of Kings. All rights reserved.</p>
-                </div>
-            </div>
+          </div>  
         </div>
-    </footer>
+        <div class="quick-links">
+          <h3>Quick Links</h3>
+          <p><a href="./pages/products.html" style="color: white;"><i class='bx bx-chevrons-right'></i> Products</a></p>
+          <p><a href="./pages/services.html" style="color: white;"><i class='bx bx-chevrons-right'></i> Services</a></p>
+          <p><a href="./pages/about.html" style="color: white;"><i class='bx bx-chevrons-right'></i> About Us</a></p>
+          <p><a href="./pages/kok_gallery.html" style="color: white;"><i class='bx bx-chevrons-right'></i> Gallery</a></p>
+        </div>
+    </div>
+    <a href="terms.html" style="color:white;font-size:18px; text-decoration: none; font-weight: bold;">Terms and Conditions</a>
 
-</body></html>
+ 
+    <div class="footer-bottom">
+        <p>&copy; 2025 King of Kings. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <script src="scripts/commonscripts.js"></script>
+  <script src="scripts/home.js"></script>
+
+  <!-- Terms and Conditions Modal -->
+<div id="termsModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    
+    
+      
+  </div>
+</div>
+<script>
+  // Terms and Conditions Modal JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+  // Get the modal
+  var modal = document.getElementById("termsModal");
+  
+  // Get the button that opens the modal
+  var termsLink = document.querySelector("a[href='terms.html']");
+  
+  // Get the <span> element that closes the modal
+  var closeBtn = document.getElementsByClassName("close-btn")[0];
+  
+  // When the user clicks on the button, open the modal
+  termsLink.onclick = function(event) {
+    event.preventDefault(); // Prevent default link behavior
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden"; // Prevent scrolling behind modal
+  }
+  
+  // When the user clicks on <span> (x), close the modal
+  closeBtn.onclick = function() {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto"; // Restore scrolling
+  }
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+      document.body.style.overflow = "auto"; // Restore scrolling
+    }
+  }
+  
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape" && modal.style.display === "block") {
+      modal.style.display = "none";
+      document.body.style.overflow = "auto"; // Restore scrolling
+    }
+  });
+});
+
+// Success Stories Flipping Cards JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+  // Get all read more buttons
+  const readMoreButtons = document.querySelectorAll('.read-more-btn');
+  
+  // Get all back buttons
+  const backButtons = document.querySelectorAll('.back-to-front-btn');
+  
+  // Add click event to read more buttons
+  readMoreButtons.forEach(button => {
+      button.addEventListener('click', function() {
+          // Find the parent flip card
+          const flipCard = this.closest('.flip-card');
+          // Add flipped class
+          flipCard.classList.add('flipped');
+      });
+  });
+  
+  // Add click event to back buttons
+  backButtons.forEach(button => {
+      button.addEventListener('click', function() {
+          // Find the parent flip card
+          const flipCard = this.closest('.flip-card');
+          // Remove flipped class
+          flipCard.classList.remove('flipped');
+      });
+  });
+});
+</script>
+        </div>
+    </div>
+</body>
+</html>

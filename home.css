@@ -165,7 +165,7 @@ ul, li, a {
 
 @keyframes backgroundAnimation {
   0% {
-    background-image: url('./images/wallpapers/wp4159434-cabbage-wallpapers.jpg');
+    background-image: url('./images/plugging2.jpeg');
   }
   20% {
     background-image: url('./images/wallpapers/wp4159448-cabbage-wallpapers.jpg');
@@ -174,7 +174,7 @@ ul, li, a {
     background-image: url('./images/wallpapers/wp4159449-cabbage-wallpapers.jpg');
   }
   60% {
-    background-image: url('./images/wallpapers/wp4159434-cabbage-wallpapers.jpg');
+    background-image: url('./images/pluging3.jpeg');
   }
   80% {
     background-image: url('./images/wallpapers/wp4159448-cabbage-wallpapers.jpg');
@@ -337,7 +337,7 @@ ul, li, a {
 }
 
 .offer-card button {
-  background-color: #1AA79C;
+  background-color:#1AA79C;
   color: white;
   padding: 10px 15px;
   border: none;
@@ -376,7 +376,8 @@ ul, li, a {
   background-color: #1AA79C;
 }
 .discover-btn{
-  background-color: #1AA79C;
+  background-color: 
+  #1AA79C;
 }
 .discover-btn:hover{
   background-color: #063f39;
@@ -425,7 +426,7 @@ ul, li, a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #f9f9f9; /* Light background for the card */
+  background-color: #e9e0e1; /* Light background for the card */
   padding: 20px;
   min-width: 220px; /* Set width for each flash card */
   max-width: 250px;
@@ -624,6 +625,7 @@ footer {
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   border-radius: 10px;
   overflow: hidden;
+  background-color: #e9e0e1;
 }
 
 .video-responsive {
@@ -643,13 +645,13 @@ footer {
 }
 
 .video-caption {
-  background-color: white;
+  background-color: #e9e0e1;
   padding: 20px;
   text-align: left;
 }
 
 .video-caption h3 {
-  color: #20b2aa;
+  color: #6B9862;
   margin-bottom: 10px;
 }
 
@@ -694,7 +696,7 @@ footer {
 }
 
 .flip-card-front {
-  background-color: white;
+  background-color: #e9e0e1;
   display: flex;
   flex-direction: column;
 }
