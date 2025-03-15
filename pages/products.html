@@ -44,37 +44,35 @@
     <section>
         <div class="product-container">
             <!-- Product Card 1 -->
-            <div class="product-card">
-                <div class="product-inner">
-                    <!-- Front of card -->
-                    <div class="product-front">
-                        <img src="../images/cooking oil.jpg" alt="Cooking Oil" class="product-image">
-                        <div>
-                            <h3 class="product-name">Premium Sesame & Sunflower Cooking Oil</h3>
-                            <p class="product-price">Price: 10,000shs.UGX</p>
-                    
-                        </div>
-                    </div>
-                    
-                    <!-- Back of card (shows on hover) -->
-                    <div class="product-back">
-                        <h3 class="product-name">Premium Sesame & Sunflower Cooking Oil</h3>
-                        <div class="product-description">High-quality cooking oil made of sesame and sunflower. Perfect for everyday cooking and frying.
-                            <p></p>
-                        </div>
-                        <div class="product-details">
-                            <p><strong>Volume:</strong> 1 Liter</p>
-                            <p><strong>Type:</strong> Vegetable Oil</p>
-                            <p><strong>Shelf Life:</strong> 12 months</p>
-                            <p><strong>Benefits:</strong> Rich in Vitamin E and antioxidants</p>
-                        </div>
-                        <a href="cart.html" class="add-to-cart-link">
-                            <button class="add-to-cart">Add to Cart</button>
-                        </a>
-                    </div>
-                </div>
+        <div class="product-card">
+        <div class="product-inner">
+        <!-- Front of card -->
+        <div class="product-front">
+            <img src="../images/cooking oil.jpg" alt="Cooking Oil" class="product-image">
+            <div>
+                <h3 class="product-name">Premium Sesame & Sunflower Cooking Oil</h3>
+                <p class="product-price">Price: 10,000shs.UGX</p>
             </div>
-            
+        </div>
+        
+        <!-- Back of card (shows on hover) -->
+        <div class="product-back">
+            <h3 class="product-name">Premium Sesame & Sunflower Cooking Oil</h3>
+            <div class="product-description">
+                <p>High-quality cooking oil made of sesame and sunflower. Perfect for everyday cooking and frying.</p>
+            </div>
+            <div class="product-details">
+                <p><strong>Volume:</strong> 1 Liter</p>
+                <p><strong>Type:</strong> Vegetable Oil</p>
+                <p><strong>Shelf Life:</strong> 12 months</p>
+                <p><strong>Benefits:</strong> Rich in Vitamin E and antioxidants</p>
+            </div>
+            <a href="../pages/cart.html" class="add-to-cart-link">
+                <button class="add-to-cart">Add to Cart</button>
+            </a>
+        </div>
+    </div>
+</div>
             <!-- Product Card 2 -->
             <div class="product-card">
                 <div class="product-inner">
@@ -688,7 +686,7 @@
                         </div>
                         <div class="product-details">
                             <p><strong>Weight:</strong> 500g</p>
-                            <p><strong>Type:</strong> Organic</p>
+                            <p>< strong>Type:</strong> Organic</p>
                             <p><strong>Shelf Life:</strong> 12 months</p>
                             <p><strong>Usage:</strong> Ideal for salads, baking, and making tahini or adding to snacks for a nutritious boost.</p>
                         </div>
@@ -903,10 +901,21 @@
                     <div class="footer-logo">
                       <img src="../images/logo.png" alt="Logo" class="logo-image">
                     </div>  
+
+                    <div class="footer-left-lower">
+              
+                        <div class="social-icons">
+                            <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
+                            <a href="https://x.com/KingofKingsMIC1"><i class='bx bxl-twitter'></i></a>
+                            <a href="https://api.whatsapp.com/send/?phone=256772786985&text&type=phone_number&app_absent=0"><i class='bx bxl-whatsapp'></i></a>
+                            <a href="https://www.linkedin.com/in/walter-alii-aaa546135/?originalSubdomain=ug"><i class='bx bxl-linkedin-square'></i></a>
+                            
+                        </div>
+                      </div>
                   </div>
                   <div class="footer-left-right">
                     <div class="footer-left-upper">
-                      <h3>Contact Us</h3>
+                      <h3 style="color: white;">Contact Us</h3>
                       <p>
                           <i class="fas fa-envelope"></i>
                           <a href="mailto:info@kingofkings.com" style="color:#fff">kahaps.org@gmail.com</a>
@@ -920,20 +929,11 @@
                           <span>Plot 4, Chua Rd, Kitgum Municipality,Acholi Sub-Region,Uganda</span>
                         </p>
                     </div>
-                    <div class="footer-left-lower">
-                      <h3>Follow Us</h3>
-                      <div class="social-icons">
-                          <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
-                          <a href="https://x.com/kingofkingsmic1"><i class='bx bxl-twitter'></i></a>
-                          <a href="https://api.whatsapp.com/send/?phone=256772786985&text&type=phone_number&app_absent=0"><i class='bx bxl-whatsapp'></i></a>
-                          <a href="#"><i class='bx bxl-linkedin-square'></i></a>
-                          
-                      </div>
-                    </div>
+                    
                   </div>  
                 </div>
                 <div class="quick-links">
-                  <h3>Quick Links</h3>
+                  <h3 style="color: white;">Quick Links</h3>
                   <p><a href="./pages/products.html" style="color: white;"><i class='bx bx-chevrons-right'></i> Products</a></p>
                   <p><a href="./pages/services.html" style="color: white;"><i class='bx bx-chevrons-right'></i> Services</a></p>
                   <p><a href="./pages/about.html" style="color: white;"><i class='bx bx-chevrons-right'></i> About Us</a></p>
@@ -945,52 +945,93 @@
             </div>
           </footer>
 
+          
+  
+  
+
         <script>
-            // Function to add products to the cart
-            function addToCart(productName, price) {
-                let cart = JSON.parse(localStorage.getItem("cart")) || [];
-                cart.push({ productName, price });
-                localStorage.setItem("cart", JSON.stringify(cart));
-                alert(productName + " has been added to your cart.");
-            }
-          </script>
-
-          <script>
-            document.addEventListener("DOMContentLoaded", function () {
-              const productBoxes = document.querySelectorAll(".product-box");
-              const modal = document.getElementById("productModal");
-              const modalOverlay = document.getElementById("modalOverlay");
-              const modalTitle = document.getElementById("modalTitle");
-              const modalImage = document.getElementById("modalImage");
-              const closeModal = document.getElementById("closeModal");
-          
-              productBoxes.forEach(box => {
-                box.addEventListener("click", function () {
-                  const productName = this.getAttribute("data-name");
-                  const productImageSrc = this.querySelector("img").src;
-          
-                  modalTitle.textContent = productName;
-                  modalImage.src = productImageSrc;
-          
-                  modal.style.display = "block";
-                  modalOverlay.style.display = "block";
-                });
-              });
-          
-              closeModal.addEventListener("click", function () {
-                modal.style.display = "none";
-                modalOverlay.style.display = "none";
-              });
-          
-              modalOverlay.addEventListener("click", function () {
-                modal.style.display = "none";
-                modalOverlay.style.display = "none";
-              });
-            });
-          </script>
-
-          <script src="../scripts/commonscripts.js"></script>
-          
-</body>
+          // Initialize the cart when the page loads
+    function initCart() {
+        if (!localStorage.getItem('shoppingCart')) {
+          localStorage.setItem('shoppingCart', JSON.stringify([]));
+        }
+      }
+  
+      // Add item to cart
+      function addToCart(productId, productName, productPrice, productDescription, productImage) {
+        let cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+        const item = {
+          id: productId,
+          name: productName,
+          price: productPrice,
+          description: productDescription,
+          image: productImage,
+          quantity: 1
+        };
+        const existingItemIndex = cart.findIndex(cartItem => cartItem.id === productId);
+        if (existingItemIndex > -1) {
+          cart[existingItemIndex].quantity++;
+        } else {
+          cart.push(item);
+        }
+        localStorage.setItem('shoppingCart', JSON.stringify(cart));
+        showMessage('Item added to cart! <a href="../pages/cart.html">View Cart</a>', 'success');
+        updateCartCounter();
+      }
+  
+      // Update the cart counter in the header
+      function updateCartCounter() {
+        const counter = document.getElementById('cart-count');
+        if (!counter) return;
+        const cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+        const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
+        counter.textContent = itemCount;
+        counter.style.display = itemCount > 0 ? 'flex' : 'none';
+      }
+  
+      // Show notification messages
+      function showMessage(message, type) {
+        const messageEl = document.createElement('div');
+        messageEl.className = `message ${type}`;
+        messageEl.innerHTML = `
+          <div class="message-content">
+            <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-info-circle'}"></i>
+            <span>${message}</span>
+          </div>
+        `;
+        document.body.appendChild(messageEl);
+        setTimeout(() => {
+          messageEl.classList.add('fade-out');
+          setTimeout(() => {
+            messageEl.remove();
+          }, 500);
+        }, 3000);
+      }
+  
+      // Initialize on page load
+      document.addEventListener('DOMContentLoaded', function () {
+        initCart();
+        updateCartCounter();
+  
+        // Update product buttons to use the addToCart function
+        const addButtons = document.querySelectorAll('.add-to-cart');
+        addButtons.forEach(button => {
+          button.replaceWith(button.cloneNode(true));
+          const newButton = button.parentNode.querySelector('.add-to-cart');
+          newButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            const productCard = this.closest('.product-card');
+            const productName = productCard.querySelector('.product-name').textContent;
+            const productPrice = productCard.querySelector('.product-price').textContent.replace('Price: ', '');
+            const productDescription = productCard.querySelector('.product-description p').textContent;
+            const productImage = productCard.querySelector('.product-image').src;
+            const productId = productName.toLowerCase().replace(/\s+/g, '-');
+            addToCart(productId, productName, productPrice, productDescription, productImage);
+          });
+        });
+      });
+    </script>
+      
+    </body>
 </html>
     

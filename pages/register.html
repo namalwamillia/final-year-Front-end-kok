@@ -1,159 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KOK Register</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KOK Register Page</title>
+  <style>
+    /* General Reset */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    a {
+      text-decoration: none;
+      color: #1AA79C;
+    }
+    
+    a:hover {
+      color: #063f39;
+    }
+    
+    h1 {
+      margin-bottom: 1.5rem;
+      color: #1AA79C;
+    }
+    
+    /* Register Container */
+    .register-container {
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Logo Section */
+    .logo img {
+      width: 150px;
+      height: auto;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+    }
+    
+    /* Form Section */
+    .register-form form {
+      margin-top: 1rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+    
+    .form-group input {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    
+    .register-btn {
+      display: block;
+      width: 100%;
+      padding: 0.8rem;
+      background-color: #1AA79C;
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 1.5rem;
+    }
+    
+    .register-btn:hover {
+      background-color: #063f39;
+      color: white;
+    }
+    
+    /* Login Link */
+    .login-link {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    
+    /* Error message styling */
+    .error-message {
+      color: #ff3333;
+      font-size: 0.85rem;
+      margin-top: 0.3rem;
+      display: none;
+      text-align: left;
+    }
+    
+    .input-error {
+      border: 1px solid #ff3333;
+    }
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f4f4f9;
-            margin: 0;
-        }
+    /* Password strength indicator */
+    .password-strength {
+      margin-top: 0.3rem;
+      font-size: 0.85rem;
+      text-align: left;
+      display: none;
+    }
 
-        .container {
-            text-align: center;
-            background: #fff;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 400px;
-            width: 100%;
-        }
+    .strength-weak {
+      color: #ff3333;
+    }
 
-        .logo {
-            margin-bottom: 1.5rem;
-        }
+    .strength-medium {
+      color: #ff9900;
+    }
 
-        .logo img {
-            width: 150px;
-            height: auto;
-        }
-
-        h2 {
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .form-control {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-        }
-
-        .form-control label {
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-            color: #555;
-        }
-
-        .form-control input {
-            padding: 0.75rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .form-control input:focus {
-            outline: none;
-            border-color: #1aa79c;
-            box-shadow: 0 0 5px rgba(26, 167, 156, 0.5);
-        }
-
-        .btn {
-            padding: 0.75rem;
-            background-color: #1aa79c;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #0ccf1c;
-        }
-
-        .redirect {
-            margin-top: 1rem;
-            font-size: 0.9rem;
-        }
-
-        .redirect a {
-            color: #1aa79c;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        .redirect a:hover {
-            color: #148f85;
-        }
-        .login-btn{
-            display: block;
-    width: 100%;
-    padding: 0.8rem;
-    background-color: #1AA79C;
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-        }
-        .login-btn:hover {
-            background-color: #14e426;
-            color: #333;
-          }
-    </style>
+    .strength-strong {
+      color: #063f39;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">
-            <img src="logo.png" alt="Logo">
-        </div>
-        <h2>Register</h2>
-        <form>
-            <div class="form-control">
-                <label for="fullname">Full Name</label>
-                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
-            </div>
-            <div class="form-control">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
-            </div>
-            <div class="form-control">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
-            </div>
-            <div class="form-control">
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
-            </div>
-            <button type="button" class="login-btn" onclick="window.location.href='../pages/order_form.html'">register</button>
-
-        </form>
-        <div class="redirect">
-            Already have an account? <a href="login.html">Login</a>
-        </div>
+  <!-- Register Page -->
+  <div class="register-container">
+    <!-- Logo Section -->
+    <div class="logo">
+      <img src="logo.png" alt="King of Kings Logo">
     </div>
+
+    <!-- Register Form -->
+    <div class="register-form">
+      <h1>Register</h1>
+      <form id="registerForm">
+        <div class="form-group">
+          <label for="fullname">Full Name:</label>
+          <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
+          <div id="fullnameError" class="error-message">Please enter your full name.</div>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email">
+          <div id="emailError" class="error-message">Please enter a valid email address.</div>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password">
+          <div id="passwordError" class="error-message">Password must be at least 8 characters.</div>
+          <div id="passwordStrength" class="password-strength">Password strength: <span id="strengthText">weak</span></div>
+        </div>
+        
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password">
+          <div id="confirmPasswordError" class="error-message">Passwords do not match.</div>
+        </div>
+        
+        <button type="button" class="register-btn" id="registerButton">SignUp</button>
+      </form>
+
+      
+    </div>
+  </div>
+
+  <script>
+
+
+    // On your login/signup page (login.js or similar)
+function handleSuccessfulLogin(userData) {
+  // Store user data in sessionStorage when they log in successfully
+  sessionStorage.setItem('userData', JSON.stringify({
+    name: userData.name,
+    email: userData.email
+  }));
+  
+  // Redirect to order form
+  window.location.href = 'order-form.html';
+}
+
+// Example login form submission
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Get username and password from form
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+  
+  // Send login request to server
+  fetch('/api/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ username, password })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      // Call function to handle successful login
+      handleSuccessfulLogin(data.user);
+    } else {
+      // Handle login failure
+      alert('Login failed: ' + data.message);
+    }
+  })
+  .catch(error => {
+    console.error('Error during login:', error);
+    alert('An error occurred during login');
+  });
+});
+    // Get form elements
+    const registerForm = document.getElementById('registerForm');
+    const fullnameInput = document.getElementById('fullname');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
+    
+    const fullnameError = document.getElementById('fullnameError');
+    const emailError = document.getElementById('emailError');
+    const passwordError = document.getElementById('passwordError');
+    const confirmPasswordError = document.getElementById('confirmPasswordError');
+    
+    const passwordStrength = document.getElementById('passwordStrength');
+    const strengthText = document.getElementById('strengthText');
+    
+    const registerButton = document.getElementById('registerButton');
+    
+    // Email validation function
+    function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+    
+    // Password strength checker
+    function checkPasswordStrength(password) {
+      if (!password) return 'weak';
+      
+      let strength = 0;
+      
+      // Check length
+      if (password.length >= 8) strength += 1;
+      
+      // Check for lowercase and uppercase
+      if (/[a-z]/.test(password) && /[A-Z]/.test(password)) strength += 1;
+      
+      // Check for numbers and special characters
+      if (/[0-9]/.test(password) && /[^a-zA-Z0-9]/.test(password)) strength += 1;
+      
+      if (strength === 0) return 'weak';
+      if (strength === 1) return 'weak';
+      if (strength === 2) return 'medium';
+      return 'strong';
+    }
+    
+    // Show password strength indicator
+    passwordInput.addEventListener('input', function() {
+      const password = passwordInput.value.trim();
+      
+      if (password) {
+        const strength = checkPasswordStrength(password);
+        passwordStrength.style.display = 'block';
+        
+        // Remove all strength classes
+        strengthText.classList.remove('strength-weak', 'strength-medium', 'strength-strong');
+        
+        // Add appropriate class
+        strengthText.classList.add(`strength-${strength}`);
+        strengthText.textContent = strength;
+      } else {
+        passwordStrength.style.display = 'none';
+      }
+    });
+    
+    // Register button click handler
+    registerButton.addEventListener('click', function() {
+      let isValid = true;
+      
+      // Reset error states
+      fullnameInput.classList.remove('input-error');
+      emailInput.classList.remove('input-error');
+      passwordInput.classList.remove('input-error');
+      confirmPasswordInput.classList.remove('input-error');
+      
+      fullnameError.style.display = 'none';
+      emailError.style.display = 'none';
+      passwordError.style.display = 'none';
+      confirmPasswordError.style.display = 'none';
+      
+      // Validate full name
+      if (!fullnameInput.value.trim()) {
+        fullnameInput.classList.add('input-error');
+        fullnameError.style.display = 'block';
+        isValid = false;
+      }
+      
+      // Validate email
+      if (!emailInput.value.trim()) {
+        emailInput.classList.add('input-error');
+        emailError.textContent = 'Please enter your email address.';
+        emailError.style.display = 'block';
+        isValid = false;
+      } else if (!isValidEmail(emailInput.value.trim())) {
+        emailInput.classList.add('input-error');
+        emailError.textContent = 'Please enter a valid email address.';
+        emailError.style.display = 'block';
+        isValid = false;
+      }
+      
+      // Validate password
+      const password = passwordInput.value.trim();
+      if (!password) {
+        passwordInput.classList.add('input-error');
+        passwordError.textContent = 'Please enter a password.';
+        passwordError.style.display = 'block';
+        isValid = false;
+      } else if (password.length < 8) {
+        passwordInput.classList.add('input-error');
+        passwordError.textContent = 'Password must be at least 8 characters.';
+        passwordError.style.display = 'block';
+        isValid = false;
+      }
+      
+      // Validate confirm password
+      if (!confirmPasswordInput.value.trim()) {
+        confirmPasswordInput.classList.add('input-error');
+        confirmPasswordError.textContent = 'Please confirm your password.';
+        confirmPasswordError.style.display = 'block';
+        isValid = false;
+      } else if (confirmPasswordInput.value.trim() !== password) {
+        confirmPasswordInput.classList.add('input-error');
+        confirmPasswordError.textContent = 'Passwords do not match.';
+        confirmPasswordError.style.display = 'block';
+        isValid = false;
+      }
+      
+      // If form is valid, redirect to login page
+      if (isValid) {
+        // Here you would typically send the data to your server
+        // For now, we'll just redirect to the login page
+        window.location.href = 'login.html';
+      }
+    });
+    
+    // Clear error messages when user starts typing
+    fullnameInput.addEventListener('input', function() {
+      fullnameInput.classList.remove('input-error');
+      fullnameError.style.display = 'none';
+    });
+    
+    emailInput.addEventListener('input', function() {
+      emailInput.classList.remove('input-error');
+      emailError.style.display = 'none';
+    });
+    
+    passwordInput.addEventListener('input', function() {
+      passwordInput.classList.remove('input-error');
+      passwordError.style.display = 'none';
+    });
+    
+    confirmPasswordInput.addEventListener('input', function() {
+      confirmPasswordInput.classList.remove('input-error');
+      confirmPasswordError.style.display = 'none';
+    });
+  </script>
 </body>
 </html>

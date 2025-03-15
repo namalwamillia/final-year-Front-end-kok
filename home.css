@@ -165,7 +165,7 @@ ul, li, a {
 
 @keyframes backgroundAnimation {
   0% {
-    background-image: url('./images/plugging2.jpeg');
+    background-image: url('./images/wallpapers/wp4159448-cabbage-wallpapers.jpg');
   }
   20% {
     background-image: url('./images/wallpapers/wp4159448-cabbage-wallpapers.jpg');
@@ -174,7 +174,7 @@ ul, li, a {
     background-image: url('./images/wallpapers/wp4159449-cabbage-wallpapers.jpg');
   }
   60% {
-    background-image: url('./images/pluging3.jpeg');
+    background-image: url('./images/wallpapers/wp4159448-cabbage-wallpapers.jpg');
   }
   80% {
     background-image: url('./images/wallpapers/wp4159448-cabbage-wallpapers.jpg');
@@ -604,11 +604,10 @@ footer {
 }
 
 
-
 /* Success Stories Section Styles */
 .farmer-stories {
   background-color: #f5f5f5;
-  padding: 40px 20px;
+  padding: 60px 50px;
   text-align: center;
   margin-bottom: 0;
 }
@@ -619,13 +618,29 @@ footer {
   font-size: 2rem;
 }
 
+/* Container for side-by-side layout */
+.success-stories-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Video Section */
+.video-section {
+  flex: 1;
+  max-width: 400px;
+}
+
 .video-container {
-  margin: 0 auto 40px;
-  max-width: 800px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   border-radius: 10px;
   overflow: hidden;
-  background-color: #e9e0e1;
+  background-color: #c32c3e;
+  height: 440px;
+  
+  
 }
 
 .video-responsive {
@@ -642,12 +657,14 @@ footer {
   width: 100%;
   height: 100%;
   border: 0;
+ 
 }
 
 .video-caption {
   background-color: #e9e0e1;
-  padding: 20px;
+  padding: 40px;
   text-align: left;
+ 
 }
 
 .video-caption h3 {
@@ -655,12 +672,18 @@ footer {
   margin-bottom: 10px;
 }
 
+/* Stories Section */
+.stories-section {
+  flex: 1;
+  max-width: 750px;
+  min-height: 400px;
+}
+
 .stories-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 25px;
-  margin-top: 20px;
 }
 
 /* Flip Card Styles */
@@ -703,7 +726,7 @@ footer {
 
 .flip-card-front img {
   width: 100%;
-  height: 200px;
+  height: 230px;
   object-fit: cover;
 }
 
@@ -766,7 +789,7 @@ footer {
 
 .read-more-btn, .back-to-front-btn {
   display: inline-block;
-  background-color:  #063f39;
+  background-color: #063f39;
   color: white;
   padding: 8px 15px;
   border-radius: 5px;
@@ -784,22 +807,6 @@ footer {
 
 .back-to-front-btn {
   margin-top: 20px;
-}
-
-.view-all-stories {
-  display: inline-block;
-  background-color: #20b2aa;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 30px;
-  transition: background-color 0.3s;
-}
-
-.view-all-stories:hover {
-  background-color: #1a9089;
 }
 
 /* Custom scrollbar for the back of card */
@@ -820,21 +827,28 @@ footer {
   background: #1a9089;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
-  .video-container {
+  .success-stories-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .video-section, .stories-section {
       max-width: 95%;
   }
-  
+
   .stories-grid {
       gap: 20px;
   }
-  
+
   .flip-card {
       width: 100%;
       max-width: 350px;
       height: 450px;
   }
 }
+
 /* Modal Styles */
 .modal {
   display: none;
@@ -920,4 +934,210 @@ footer {
     margin: 10% auto;
     padding: 15px;
   }
+}
+
+/* Stories Button Container */
+.stories-button-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* View All Stories Button Styles */
+.view-all-stories {
+  display: inline-block;
+  background-color: #063f39;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+}
+
+/* Hover Effect */
+.view-all-stories:hover {
+  background-color:#063f39;
+}
+
+/* Active/Focus State (for accessibility) */
+.view-all-stories:active,
+.view-all-stories:focus {
+  background-color: #063f39;
+  outline: none;
+}
+
+/* Ensure button looks like a button */
+.view-all-stories {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+}
+
+/* Existing styles remain unchanged */
+
+/* Cube Container Styles */
+/* Cube Container Styles */
+/* Cube Container Styles */
+.stories-cube-container {
+  width: 80%;         /* Reduced from 100% to 80% */
+  height: 400px;      /* Reduced from 500px to 400px */
+  perspective: 800px; /* Reduced from 1000px to 800px */
+  margin: 30px auto;  /* Reduced margin from 40px to 30px */
+  max-width: 500px;   /* Reduced from 600px to 500px */
+  font-size: 2px;
+}
+
+.stories-cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.cube-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  overflow: auto; /* Allow scrolling for longer content */
+  border-radius: 16px; /* Increased roundness */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15), 0 6px 12px rgba(37,99,235,0.1); /* Layered shadow for depth */
+  background: linear-gradient(135deg, #ffffff, #f0f4f8); /* Subtle gradient background */
+  border: 1px solid rgba(230, 236, 245, 0.8); /* Subtle border */
+  transition: all 0.3s ease; /* Smooth transitions */
+  padding: 8px; /* Inner padding */
+}
+
+/* Add hover effects to the cube faces */
+.cube-face:hover {
+  box-shadow: 0 12px 36px rgba(0,0,0,0.2), 0 8px 16px rgba(37,99,235,0.15);
+  transform: scale(1.01); /* Slight growth on hover */
+}
+
+/* Add decorative accent to cube faces */
+.cube-face:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, #165c58#165c58,#165c58);
+  border-radius: 16px 16px 0 0;
+  opacity: 0.8;
+}
+
+/* Style the scrollbar for better aesthetics */
+.cube-face::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cube-face::-webkit-scrollbar-track {
+  background: rgba(240, 244, 248, 0.8);
+  border-radius: 8px;
+}
+
+.cube-face::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #165c58, #165c58);
+  border-radius: 8px;
+}
+/* Position each face - reduced translateZ values */
+.front { transform: translateZ(250px); } /* Reduced from 300px to 250px */
+.right { transform: rotateY(90deg) translateZ(250px); } /* Reduced from 300px to 250px */
+.back { transform: rotateY(180deg) translateZ(250px); } /* Reduced from 300px to 250px */
+
+/* Story content within cube faces */
+.cube-story {
+  padding: 20px;      /* Reduced padding from 25px to 20px */
+  text-align: left;
+  max-width: 100%;
+}
+
+.cube-story img {
+  width: 50%;         /* Reduced from 50% to 30% */
+  height: 200px;      /* Reduced from 250px to 180px */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  margin-left: 13vh;
+}
+
+.cube-story h3 {
+  color: #009688;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.cube-story p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 0.8rem;
+}
+
+.close-stories-cube {
+  background-color: #009688;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+  display: block;
+  margin: 20px auto 10px;
+  width: 80%;
+  max-width: 250px;
+  text-align: center;
+}
+
+.close-stories-cube:hover {
+  background-color: #007d6e;
+}
+
+/* Navigation controls */
+.cube-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.cube-controls button {
+  background-color: #009688;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cube-controls button:hover {
+  background-color: #007d6e;
+}
+
+/* View All Stories button styling */
+.view-all-stories {
+  display: inline-block;
+  background-color: #009688;
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.view-all-stories:hover {
+  background-color: #007d6e;
+}
+
+.stories-button-container {
+  text-align: center;
+  margin-top: 30px;
 }

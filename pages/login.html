@@ -5,104 +5,115 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KOK Login Page</title>
   <link rel="stylesheet" href="styles.css">
-</head>
-<style>
+  <style>
     /* General Reset */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  a {
-    text-decoration: none;
-    color: #1AA79C;
-  }
-  
-  a:hover {
-    color: #14e241;
-  }
-  
-  h1 {
-    margin-bottom: 1.5rem;
-    color: #1AA79C;
-  }
-  
-  /* Login Container */
-  .login-container {
-    text-align: center;
-    width: 100%;
-    max-width: 400px;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Logo Section */
-  .logo img {
-    width: 150px;
-    height: auto;
-    margin-bottom: 1.5rem;
-  }
-  
-  /* Form Section */
-  .login-form form {
-    margin-top: 1rem;
-  }
-  
-  .form-group {
-    margin-bottom: 1rem;
-    text-align: left;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-    font-weight: bold;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-  
-  .login-btn {
-    display: block;
-    width: 100%;
-    padding: 0.8rem;
-    background-color: #1AA79C;
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .login-btn:hover {
-    background-color: #14e426;
-    color: #333;
-  }
-  
-  /* Register Link */
-  .register-link {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-  }
-  
-</style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    a {
+      text-decoration: none;
+      color: #1AA79C;
+    }
+    
+    a:hover {
+      color: #063f39;
+    }
+    
+    h1 {
+      margin-bottom: 1.5rem;
+      color: #1AA79C;
+    }
+    
+    /* Login Container */
+    .login-container {
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Logo Section */
+    .logo img {
+      width: 150px;
+      height: auto;
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Form Section */
+    .login-form form {
+      margin-top: 1rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+    
+    .form-group input {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    
+    .login-btn {
+      display: block;
+      width: 100%;
+      padding: 0.8rem;
+      background-color: #1AA79C;
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .login-btn:hover {
+      background-color: #063f39;
+      color: white;
+    }
+    
+    /* Register Link */
+    .register-link {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    
+    /* Error message styling */
+    .error-message {
+      color: #ff3333;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      display: none;
+    }
+    
+    .input-error {
+      border: 1px solid #ff3333;
+    }
+  </style>
+</head>
 <body>
   <!-- Login Page -->
   <div class="login-container">
@@ -114,18 +125,18 @@ body {
     <!-- Login Form -->
     <div class="login-form">
       <h1>Login</h1>
-      <form action="process_login.php" method="POST">
+      <form id="loginForm" action="process_login.php" method="POST">
         <div class="form-group">
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          <input type="email" id="email" name="email" placeholder="Enter your email">
+          <div id="emailError" class="error-message">Please enter a valid email address.</div>
         </div>
         <div class="form-group">
           <label for="password">Password:</label>
-          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+          <input type="password" id="password" name="password" placeholder="Enter your password">
+          <div id="passwordError" class="error-message">Please enter your password.</div>
         </div>
-        <!-- <button type="submit" class="login-btn"><a href="../pages/order_form.html">login</a> -->
-          <button type="button" class="login-btn" onclick="window.location.href='../pages/order_form.html'">Login</button>
-
+        <button type="button" class="login-btn" id="loginButton">Login</button>
       </form>
 
       <!-- Register Link -->
@@ -134,5 +145,112 @@ body {
       </p>
     </div>
   </div>
+
+  <script>
+    // Get form elements
+    const loginForm = document.getElementById('loginForm');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const emailError = document.getElementById('emailError');
+    const passwordError = document.getElementById('passwordError');
+    const loginButton = document.getElementById('loginButton');
+    
+    // Email validation function
+    function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+    
+    // Login button click handler
+    loginButton.addEventListener('click', function() {
+      let isValid = true;
+      
+      // Reset error states
+      emailInput.classList.remove('input-error');
+      passwordInput.classList.remove('input-error');
+      emailError.style.display = 'none';
+      passwordError.style.display = 'none';
+      
+      // Validate email
+      if (!emailInput.value.trim()) {
+        emailInput.classList.add('input-error');
+        emailError.textContent = 'Please enter your email address.';
+        emailError.style.display = 'block';
+        isValid = false;
+      } else if (!isValidEmail(emailInput.value.trim())) {
+        emailInput.classList.add('input-error');
+        emailError.textContent = 'Please enter a valid email address.';
+        emailError.style.display = 'block';
+        isValid = false;
+      }
+      
+      // Validate password
+      if (!passwordInput.value.trim()) {
+        passwordInput.classList.add('input-error');
+        passwordError.style.display = 'block';
+        isValid = false;
+      }
+      
+      // If form is valid, redirect to order form
+      if (isValid) {
+        window.location.href = '../pages/order_form.html';
+      }
+    });
+    
+    // Clear error messages when user starts typing
+    emailInput.addEventListener('input', function() {
+      emailInput.classList.remove('input-error');
+      emailError.style.display = 'none';
+    });
+    
+    passwordInput.addEventListener('input', function() {
+      passwordInput.classList.remove('input-error');
+      passwordError.style.display = 'none';
+    });
+
+    // On your login/signup page (login.js or similar)
+function handleSuccessfulLogin(userData) {
+  // Store user data in sessionStorage when they log in successfully
+  sessionStorage.setItem('userData', JSON.stringify({
+    name: userData.name,
+    email: userData.email
+  }));
+  
+  // Redirect to order form
+  window.location.href = 'order-form.html';
+}
+
+// Example login form submission
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Get username and password from form
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+  
+  // Send login request to server
+  fetch('/api/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ username, password })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      // Call function to handle successful login
+      handleSuccessfulLogin(data.user);
+    } else {
+      // Handle login failure
+      alert('Login failed: ' + data.message);
+    }
+  })
+  .catch(error => {
+    console.error('Error during login:', error);
+    alert('An error occurred during login');
+  });
+});
+  </script>
 </body>
 </html>

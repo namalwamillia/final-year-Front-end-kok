@@ -45,18 +45,22 @@
     <!-- Customer Order Form -->
      <main class="order-container">
         <div class="order-form">
+          <h2 style="text-align: center;color: #1AA79C;padding-bottom:6vh">Customer Order Form</h2>
             <!-- Image of Ordered Item -->
-            <img src="../images/collection.png" alt="Ordered Item">
-    
-            <!-- Customer Details -->
-            <div class="customer-details">
-                <span><strong>Customer Name:</strong> John Doe</span>
-                <span><strong>Email:</strong> johndoe@example.com</span>
-            </div>
+            <img src="../images/logo.png" alt="Ordered Item">
+    <!-- Customer Details -->
+<div class="customer-details">
+  <label for="customer-name"><strong>Customer Name:</strong></label>
+  <input type="text" id="customer-name" name="customer-name" value="John Doe">
+
+  <label for="customer-email"><strong>Email:</strong></label>
+  <input type="email" id="customer-email" name="customer-email" value="johndoe@example.com">
+</div>
+
     
             <!-- Pickup/Delivery Options -->
             <div class="buttons">
-                <span><strong>Please Choose Pickup or Delivery:</strong></span><br>
+                <span><strong>Please Choose Pickup or Delivery:</strong></span><br><br>
                 <label>
                     <input type="radio" name="delivery" value="pickup"> Pick Up
                 </label>
@@ -67,7 +71,7 @@
     
             <!-- Product/Service Selection -->
             <div class="buttons">
-                <span><strong>Choose Product or Service:</strong></span><br>
+                <span><strong>Choose Product or Service:</strong></span><br><br>
                 <label>
                     <input type="radio" name="productOrService" value="product"> Product
                 </label>
@@ -86,6 +90,9 @@
             <div class="order-now-button">
                 <button onclick="placeOrder()">Order Now</button>
             </div>
+            <div class="deiver">
+             "Payment shall be made upon Delivery.Thanks for your order".
+            </div>
         </div>
      </main>
     
@@ -98,6 +105,17 @@
                 <div class="footer-logo">
                   <img src="../images/logo.png" alt="Logo" class="logo-image">
                 </div>  
+
+                <div class="footer-left-lower">
+              
+                  <div class="social-icons">
+                      <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
+                      <a href="https://x.com/KingofKingsMIC1"><i class='bx bxl-twitter'></i></a>
+                      <a href="https://api.whatsapp.com/send/?phone=256772786985&text&type=phone_number&app_absent=0"><i class='bx bxl-whatsapp'></i></a>
+                      <a href="https://www.linkedin.com/in/walter-alii-aaa546135/?originalSubdomain=ug"><i class='bx bxl-linkedin-square'></i></a>
+                      
+                  </div>
+                </div>
               </div>
               <div class="footer-left-right">
                 <div class="footer-left-upper">
@@ -115,16 +133,7 @@
                       <span>Plot 4, Chua Rd, Kitgum Municipality,Acholi Sub-Region,Uganda</span>
                     </p>
                 </div>
-                <div class="footer-left-lower">
-                  <h3>Follow Us</h3>
-                  <div class="social-icons">
-                      <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
-                      <a href="https://x.com/kingofkingsmic1"><i class='bx bxl-twitter'></i></a>
-                      <a href="https://api.whatsapp.com/send/?phone=256772786985&text&type=phone_number&app_absent=0"><i class='bx bxl-whatsapp'></i></a>
-                      <a href="#"><i class='bx bxl-linkedin-square'></i></a>
-                      
-                  </div>
-                </div>
+                
               </div>  
             </div>
             <div class="quick-links">
@@ -166,6 +175,29 @@
             // If all options are selected, show notification
             showNotification();
         }
+        document.addEventListener('DOMContentLoaded', function() {
+  // Check if user is logged in
+  const isLoggedIn = checkUserLoginStatus(); // You'll need to implement this function
+  
+  if (isLoggedIn) {
+    // Fetch user data from your session or make an API call
+    fetchUserData()
+      .then(userData => {
+        // Populate form fields with user data
+        document.getElementById('customerName').value = userData.name;
+        document.getElementById('customerEmail').value = userData.email;
+      })
+      .catch(error => {
+        console.error('Error fetching user data:', error);
+      });
+  }
+});
+
+// Example function to fetch user data (implementation depends on your backend)
+function fetchUserData() {
+  return fetch('/api/user/current')
+    .then(response => response.json());
+}
     </script>
 
 </body></html>
